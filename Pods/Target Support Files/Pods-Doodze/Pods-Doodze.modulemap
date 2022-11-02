@@ -1,0 +1,6 @@
+framework module Pods_Doodze {
+  umbrella header "Pods-Doodze-umbrella.h"
+
+  export *
+  module * { export * }
+}

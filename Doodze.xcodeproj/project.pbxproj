@@ -7,25 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		717E785C2911A98700F6155B /* TimersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E785B2911A98700F6155B /* TimersViewController.swift */; };
+		717E785E2911AAD200F6155B /* AddressSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E785D2911AAD200F6155B /* AddressSearchViewController.swift */; };
+		717E78602911AAE000F6155B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E785F2911AAE000F6155B /* ProfileViewController.swift */; };
+		71E7AFBB2911BA14006A9FAC /* UIColor + Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7AFBA2911BA14006A9FAC /* UIColor + Hex.swift */; };
+		71E7AFBD2911BAB0006A9FAC /* UIColor + Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7AFBC2911BAB0006A9FAC /* UIColor + Colors.swift */; };
+		71E7AFBF2911BAD3006A9FAC /* UIColor + Creator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7AFBE2911BAD3006A9FAC /* UIColor + Creator.swift */; };
+		71E7AFC12911BF0D006A9FAC /* Situation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7AFC02911BF0D006A9FAC /* Situation.swift */; };
+		71E7AFC32911BF6B006A9FAC /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7AFC22911BF6B006A9FAC /* Timer.swift */; };
+		71E7AFC52911C16B006A9FAC /* TimerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7AFC42911C16B006A9FAC /* TimerTableViewCell.swift */; };
+		71E7AFC72911C1B5006A9FAC /* ClassIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7AFC62911C1B5006A9FAC /* ClassIdentifiable.swift */; };
+		71E7AFC92911C63E006A9FAC /* UIView + AddSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7AFC82911C63E006A9FAC /* UIView + AddSubviews.swift */; };
+		71E7AFCB2911D999006A9FAC /* CALayer + Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7AFCA2911D999006A9FAC /* CALayer + Shadow.swift */; };
 		71F312D429118FA50032E880 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F312D329118FA50032E880 /* AppDelegate.swift */; };
 		71F312D629118FA50032E880 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F312D529118FA50032E880 /* SceneDelegate.swift */; };
-		71F312D829118FA50032E880 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F312D729118FA50032E880 /* ViewController.swift */; };
-		71F312DB29118FA50032E880 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71F312D929118FA50032E880 /* Main.storyboard */; };
+		71F312D829118FA50032E880 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F312D729118FA50032E880 /* MainTabBarViewController.swift */; };
 		71F312DE29118FA50032E880 /* Doodze.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71F312DC29118FA50032E880 /* Doodze.xcdatamodeld */; };
 		71F312E029118FA70032E880 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71F312DF29118FA70032E880 /* Assets.xcassets */; };
 		71F312E329118FA70032E880 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71F312E129118FA70032E880 /* LaunchScreen.storyboard */; };
+		EAFBE0229ACEA13EA3455273 /* Pods_Doodze.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E632145F9965D7280128ADC /* Pods_Doodze.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E632145F9965D7280128ADC /* Pods_Doodze.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doodze.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		717E785B2911A98700F6155B /* TimersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersViewController.swift; sourceTree = "<group>"; };
+		717E785D2911AAD200F6155B /* AddressSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchViewController.swift; sourceTree = "<group>"; };
+		717E785F2911AAE000F6155B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		71E7AFBA2911BA14006A9FAC /* UIColor + Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Hex.swift"; sourceTree = "<group>"; };
+		71E7AFBC2911BAB0006A9FAC /* UIColor + Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Colors.swift"; sourceTree = "<group>"; };
+		71E7AFBE2911BAD3006A9FAC /* UIColor + Creator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Creator.swift"; sourceTree = "<group>"; };
+		71E7AFC02911BF0D006A9FAC /* Situation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Situation.swift; sourceTree = "<group>"; };
+		71E7AFC22911BF6B006A9FAC /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		71E7AFC42911C16B006A9FAC /* TimerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTableViewCell.swift; sourceTree = "<group>"; };
+		71E7AFC62911C1B5006A9FAC /* ClassIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassIdentifiable.swift; sourceTree = "<group>"; };
+		71E7AFC82911C63E006A9FAC /* UIView + AddSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + AddSubviews.swift"; sourceTree = "<group>"; };
+		71E7AFCA2911D999006A9FAC /* CALayer + Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer + Shadow.swift"; sourceTree = "<group>"; };
 		71F312D029118FA50032E880 /* Doodze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doodze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71F312D329118FA50032E880 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71F312D529118FA50032E880 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		71F312D729118FA50032E880 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		71F312DA29118FA50032E880 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		71F312D729118FA50032E880 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		71F312DD29118FA50032E880 /* Doodze.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Doodze.xcdatamodel; sourceTree = "<group>"; };
 		71F312DF29118FA70032E880 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71F312E229118FA70032E880 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71F312E429118FA70032E880 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8EF6E767822FC22BAC58248 /* Pods-Doodze.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doodze.debug.xcconfig"; path = "Target Support Files/Pods-Doodze/Pods-Doodze.debug.xcconfig"; sourceTree = "<group>"; };
+		D06CEB428536890D46E182B7 /* Pods-Doodze.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doodze.release.xcconfig"; path = "Target Support Files/Pods-Doodze/Pods-Doodze.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +59,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAFBE0229ACEA13EA3455273 /* Pods_Doodze.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F46C9A6AB0DD7BDE3D6531C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A8EF6E767822FC22BAC58248 /* Pods-Doodze.debug.xcconfig */,
+				D06CEB428536890D46E182B7 /* Pods-Doodze.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		71F312C729118FA50032E880 = {
 			isa = PBXGroup;
 			children = (
 				71F312D229118FA50032E880 /* Doodze */,
 				71F312D129118FA50032E880 /* Products */,
+				3F46C9A6AB0DD7BDE3D6531C /* Pods */,
+				EF92CB1F8C13213CA7E9E139 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +96,91 @@
 		71F312D229118FA50032E880 /* Doodze */ = {
 			isa = PBXGroup;
 			children = (
-				71F312D329118FA50032E880 /* AppDelegate.swift */,
-				71F312D529118FA50032E880 /* SceneDelegate.swift */,
-				71F312D729118FA50032E880 /* ViewController.swift */,
-				71F312D929118FA50032E880 /* Main.storyboard */,
-				71F312DF29118FA70032E880 /* Assets.xcassets */,
-				71F312E129118FA70032E880 /* LaunchScreen.storyboard */,
+				71F312EA291190570032E880 /* Supporting Files */,
+				71F312F0291190A10032E880 /* Models */,
+				71F312EC2911906F0032E880 /* ViewControllers */,
+				71F312EF291190870032E880 /* ViewModels */,
+				71F312ED291190770032E880 /* Views */,
 				71F312E429118FA70032E880 /* Info.plist */,
 				71F312DC29118FA50032E880 /* Doodze.xcdatamodeld */,
 			);
 			path = Doodze;
+			sourceTree = "<group>";
+		};
+		71F312EA291190570032E880 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				71F312D329118FA50032E880 /* AppDelegate.swift */,
+				71F312D529118FA50032E880 /* SceneDelegate.swift */,
+				71F312DF29118FA70032E880 /* Assets.xcassets */,
+				71F312E129118FA70032E880 /* LaunchScreen.storyboard */,
+				71F312EB291190640032E880 /* Extensions */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		71F312EB291190640032E880 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				71E7AFBA2911BA14006A9FAC /* UIColor + Hex.swift */,
+				71E7AFBE2911BAD3006A9FAC /* UIColor + Creator.swift */,
+				71E7AFBC2911BAB0006A9FAC /* UIColor + Colors.swift */,
+				71E7AFC82911C63E006A9FAC /* UIView + AddSubviews.swift */,
+				71E7AFC62911C1B5006A9FAC /* ClassIdentifiable.swift */,
+				71E7AFCA2911D999006A9FAC /* CALayer + Shadow.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		71F312EC2911906F0032E880 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				71F312D729118FA50032E880 /* MainTabBarViewController.swift */,
+				717E785B2911A98700F6155B /* TimersViewController.swift */,
+				717E785D2911AAD200F6155B /* AddressSearchViewController.swift */,
+				717E785F2911AAE000F6155B /* ProfileViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		71F312ED291190770032E880 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				71F312EE2911907D0032E880 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		71F312EE2911907D0032E880 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				71E7AFC42911C16B006A9FAC /* TimerTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		71F312EF291190870032E880 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				71E7AFC02911BF0D006A9FAC /* Situation.swift */,
+				71E7AFC22911BF6B006A9FAC /* Timer.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		71F312F0291190A10032E880 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EF92CB1F8C13213CA7E9E139 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6E632145F9965D7280128ADC /* Pods_Doodze.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +190,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 71F312E729118FA70032E880 /* Build configuration list for PBXNativeTarget "Doodze" */;
 			buildPhases = (
+				29EA398EFADA68570B84B418 /* [CP] Check Pods Manifest.lock */,
 				71F312CC29118FA50032E880 /* Sources */,
 				71F312CD29118FA50032E880 /* Frameworks */,
 				71F312CE29118FA50032E880 /* Resources */,
+				5F6311C012AC6A6B2521974B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,35 +245,80 @@
 			files = (
 				71F312E329118FA70032E880 /* LaunchScreen.storyboard in Resources */,
 				71F312E029118FA70032E880 /* Assets.xcassets in Resources */,
-				71F312DB29118FA50032E880 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		29EA398EFADA68570B84B418 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Doodze-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F6311C012AC6A6B2521974B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Doodze/Pods-Doodze-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Doodze/Pods-Doodze-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Doodze/Pods-Doodze-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		71F312CC29118FA50032E880 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				717E785C2911A98700F6155B /* TimersViewController.swift in Sources */,
+				71E7AFBD2911BAB0006A9FAC /* UIColor + Colors.swift in Sources */,
+				71E7AFC72911C1B5006A9FAC /* ClassIdentifiable.swift in Sources */,
+				71E7AFCB2911D999006A9FAC /* CALayer + Shadow.swift in Sources */,
+				71E7AFC52911C16B006A9FAC /* TimerTableViewCell.swift in Sources */,
+				71E7AFC32911BF6B006A9FAC /* Timer.swift in Sources */,
 				71F312DE29118FA50032E880 /* Doodze.xcdatamodeld in Sources */,
-				71F312D829118FA50032E880 /* ViewController.swift in Sources */,
+				71E7AFC92911C63E006A9FAC /* UIView + AddSubviews.swift in Sources */,
+				71F312D829118FA50032E880 /* MainTabBarViewController.swift in Sources */,
+				71E7AFBB2911BA14006A9FAC /* UIColor + Hex.swift in Sources */,
 				71F312D429118FA50032E880 /* AppDelegate.swift in Sources */,
+				71E7AFBF2911BAD3006A9FAC /* UIColor + Creator.swift in Sources */,
+				71E7AFC12911BF0D006A9FAC /* Situation.swift in Sources */,
 				71F312D629118FA50032E880 /* SceneDelegate.swift in Sources */,
+				717E78602911AAE000F6155B /* ProfileViewController.swift in Sources */,
+				717E785E2911AAD200F6155B /* AddressSearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		71F312D929118FA50032E880 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				71F312DA29118FA50032E880 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		71F312E129118FA70032E880 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -220,7 +380,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -274,7 +434,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -286,6 +446,7 @@
 		};
 		71F312E829118FA70032E880 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8EF6E767822FC22BAC58248 /* Pods-Doodze.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -296,9 +457,10 @@
 				INFOPLIST_FILE = Doodze/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,6 +476,7 @@
 		};
 		71F312E929118FA70032E880 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D06CEB428536890D46E182B7 /* Pods-Doodze.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -324,9 +487,10 @@
 				INFOPLIST_FILE = Doodze/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
