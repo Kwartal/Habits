@@ -33,6 +33,9 @@ final class ProfileEditViewController: UIViewController {
     private var dateTextField = UITextField()
     private var datePicker = UIDatePicker()
     
+    private var cityLabel = UILabel()
+    private var cityTextField = UITextField()
+    
     
     
     // MARK: - Lifecycle
@@ -65,7 +68,7 @@ extension ProfileEditViewController {
         scrollView.addSubviews(scrollContentView)
         scrollContentView.addSubviews(nameView, aboutMeLabel, descriptionLabel, aboutMeView)
         nameView.addSubviews(profileImageView, changePhotoButton)
-        aboutMeView.addSubviews(femaleButton, maleButton, nameLabel, nameTextField, dateLabel, dateTextField)
+        aboutMeView.addSubviews(femaleButton, maleButton, nameLabel, nameTextField, dateLabel, dateTextField, cityLabel, cityTextField)
         
         femaleButton.addSubviews(femaleImageView, femaleLabel)
         maleButton.addSubviews(maleImageView,maleLabel)
@@ -160,6 +163,15 @@ extension ProfileEditViewController {
         dateTextField.leftViewMode = .always
         dateTextField.leftView = spacerView
         
+        cityLabel.text = "Город"
+        cityLabel.font = .systemFont(ofSize: 14, weight: .regular)
+        cityLabel.textColor = UIColor(hexString: "878787")
+        
+        cityTextField.text = UserDefaults.standard.string(forKey: "name")
+        cityTextField.textColor = UIColor(hexString: "181818")
+        cityTextField.font = .systemFont(ofSize: 16, weight: .regular)
+        cityTextField.backgroundColor = UIColor(hexString: "ECECEC")
+        cityTextField.layer.cornerRadius = 10
         
         
     }
@@ -258,7 +270,7 @@ extension ProfileEditViewController {
         
         nameTextField.snp.makeConstraints {
             $0.top.equalTo(nameLabel.snp.bottom).offset(3)
-            $0.leading.equalTo(nameLabel)
+            $0.leading.trailing.equalToSuperview().inset(15)
             $0.height.equalTo(48)
             $0.width.equalTo(305)
         }
@@ -270,10 +282,24 @@ extension ProfileEditViewController {
         
         dateTextField.snp.makeConstraints {
             $0.top.equalTo(dateLabel.snp.bottom).offset(3)
-            $0.leading.equalTo(dateLabel)
+            $0.leading.trailing.equalToSuperview().inset(15)
             $0.height.equalTo(48)
             $0.width.equalTo(305)
         }
+        
+        cityLabel.snp.makeConstraints {
+            $0.top.equalTo(dateTextField.snp.bottom).offset(20)
+            $0.leading.equalToSuperview().offset(15)
+        }
+        
+        cityTextField.snp.makeConstraints {
+            $0.top.equalTo(cityLabel.snp.bottom).offset(3)
+            $0.leading.trailing.equalToSuperview().inset(15)
+            $0.height.equalTo(48)
+            $0.width.equalTo(305)
+        }
+        
+
         
         //        datePicker.snp.makeConstraints {
         //            $0.top.equalToSuperview().offset(10)
@@ -296,12 +322,13 @@ extension ProfileEditViewController {
     @objc private func changePhotoButtonDidTap() {
         print("changePhotoButtonDidTap tap")
     }
-    @objc func handleDatePicker(_ datePicker: UIDatePicker) {
+    @objc private func handleDatePicker(_ datePicker: UIDatePicker) {
         
         let components = datePicker.date.get(.day, .month, .year)
         if let day = components.day, let month = components.month, let year = components.year {
             dateTextField.text = "\(day).\(month).\(year)"
         }
     }
+    
     
 }
