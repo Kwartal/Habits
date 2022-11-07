@@ -9,17 +9,17 @@ import Foundation
 import UIKit
 
 public class Colors {
-    
+
     /**
      (light: "#FFFFFF", dark: "#000000") Основной цвет фона
      */
     public static let background = UIColor.create(light: "#FFFFFF", dark: "#000000")
-    
+
     /**
      (light: "#262626", dark: "#FFFFFF") Базовый текст
      */
     public static let text = UIColor.create(light: "#262626", dark: "#FFFFFF")
-    
+
     // MARK: - Цвета для ячеек таблицы
     public static let lightRedOrange = UIColor.create(light: "#FFF0F0", dark: "#FF6969")
     public static let lightBlue = UIColor.create(light: "#EFFBFF", dark: "#51C9F8")
@@ -28,8 +28,7 @@ public class Colors {
     public static let lightAqua = UIColor.create(light: "#DBFFFD", dark: "#3CD2C9")
     public static let lightYellow = UIColor.create(light: "#FFF3E4", dark: "#FFB158")
     public static let lightPink = UIColor.create(light: "#FFE4F6", dark: "#FF7FE3")
-    
-    
+
     public static func color(by number: Int) -> UIColor {
         switch number {
         case 0: return lightRedOrange

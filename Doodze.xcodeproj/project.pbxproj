@@ -207,7 +207,6 @@
 				71F312CD29118FA50032E880 /* Frameworks */,
 				71F312CE29118FA50032E880 /* Resources */,
 				5F6311C012AC6A6B2521974B /* [CP] Embed Pods Frameworks */,
-				71AC1C8B2919B55700220D31 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -302,23 +301,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Doodze/Pods-Doodze-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		71AC1C8B2919B55700220D31 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
