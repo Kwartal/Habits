@@ -1,5 +1,5 @@
 //
-//  TimersViewController.swift
+//  BadHabitsViewController.swift
 //  Doodze
 //
 //  Created by Богдан Баринов on 01.11.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class TimersViewController: UIViewController {
+final class BadHabitsViewController: UIViewController {
     
     
     private var situationTimers = Situation.timers
@@ -33,7 +33,7 @@ final class TimersViewController: UIViewController {
     }
     
     private func configureTableView() {
-        tableView.register(TimerTableViewCell.self, forCellReuseIdentifier: TimerTableViewCell.reuseId)
+        tableView.register(BadHabitTableViewCell.self, forCellReuseIdentifier: BadHabitTableViewCell.reuseId)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 220
@@ -48,7 +48,7 @@ final class TimersViewController: UIViewController {
 
 // MARK: - Layout
 
-extension TimersViewController {
+extension BadHabitsViewController {
     
     private func addSubviews() {
         view.addSubview(tableView)
@@ -57,7 +57,10 @@ extension TimersViewController {
     private func setupSubviews() {
         addSubviews()
         configureTableView()
-        title = "Выберите таймер"
+        // FIXME: - Локализация
+        navigationItem.title = "Добавьте вредную привычку"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .add)
+        navigationItem.rightBarButtonItem?.width = .leastNonzeroMagnitude
         
         configureConstraints()
     }
@@ -71,7 +74,7 @@ extension TimersViewController {
     
 }
 
-extension TimersViewController: UITableViewDataSource, UITableViewDelegate {
+extension BadHabitsViewController: UITableViewDataSource, UITableViewDelegate {
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -79,15 +82,20 @@ extension TimersViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: TimerTableViewCell.reuseId, for: indexPath) as? TimerTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: BadHabitTableViewCell.reuseId, for: indexPath) as? BadHabitTableViewCell else { return UITableViewCell() }
         
         cell.configure(timer: situationTimers[indexPath.row], color: Colors.color(by: indexPath.row))
         
         return cell
     }
+
+}
+
+extension BadHabitsViewController {
     
-    
-    
-    
+    @objc private func addBadHabbit() {
+        
+        
+    }
     
 }

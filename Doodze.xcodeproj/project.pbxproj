@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		717E785C2911A98700F6155B /* TimersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E785B2911A98700F6155B /* TimersViewController.swift */; };
-		717E785E2911AAD200F6155B /* AddressSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E785D2911AAD200F6155B /* AddressSearchViewController.swift */; };
+		717E785C2911A98700F6155B /* BadHabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E785B2911A98700F6155B /* BadHabitsViewController.swift */; };
 		717E78602911AAE000F6155B /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E785F2911AAE000F6155B /* ProfileEditViewController.swift */; };
 		71A5426F2913001100337658 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5426E2913001100337658 /* ScrollView.swift */; };
 		71A54271291351AD00337658 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A54270291351AD00337658 /* Date.swift */; };
@@ -17,7 +16,7 @@
 		71E7AFBF2911BAD3006A9FAC /* UIColor + Creator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7AFBE2911BAD3006A9FAC /* UIColor + Creator.swift */; };
 		71E7AFC12911BF0D006A9FAC /* Situation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7AFC02911BF0D006A9FAC /* Situation.swift */; };
 		71E7AFC32911BF6B006A9FAC /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7AFC22911BF6B006A9FAC /* Timer.swift */; };
-		71E7AFC52911C16B006A9FAC /* TimerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7AFC42911C16B006A9FAC /* TimerTableViewCell.swift */; };
+		71E7AFC52911C16B006A9FAC /* BadHabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7AFC42911C16B006A9FAC /* BadHabitTableViewCell.swift */; };
 		71E7AFC72911C1B5006A9FAC /* ClassIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7AFC62911C1B5006A9FAC /* ClassIdentifiable.swift */; };
 		71E7AFC92911C63E006A9FAC /* UIView + AddSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7AFC82911C63E006A9FAC /* UIView + AddSubviews.swift */; };
 		71E7AFCB2911D999006A9FAC /* CALayer + Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7AFCA2911D999006A9FAC /* CALayer + Shadow.swift */; };
@@ -33,8 +32,7 @@
 
 /* Begin PBXFileReference section */
 		6E632145F9965D7280128ADC /* Pods_Doodze.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doodze.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		717E785B2911A98700F6155B /* TimersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersViewController.swift; sourceTree = "<group>"; };
-		717E785D2911AAD200F6155B /* AddressSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchViewController.swift; sourceTree = "<group>"; };
+		717E785B2911A98700F6155B /* BadHabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadHabitsViewController.swift; sourceTree = "<group>"; };
 		717E785F2911AAE000F6155B /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		71A5426E2913001100337658 /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
 		71A54270291351AD00337658 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -43,7 +41,7 @@
 		71E7AFBE2911BAD3006A9FAC /* UIColor + Creator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Creator.swift"; sourceTree = "<group>"; };
 		71E7AFC02911BF0D006A9FAC /* Situation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Situation.swift; sourceTree = "<group>"; };
 		71E7AFC22911BF6B006A9FAC /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
-		71E7AFC42911C16B006A9FAC /* TimerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTableViewCell.swift; sourceTree = "<group>"; };
+		71E7AFC42911C16B006A9FAC /* BadHabitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadHabitTableViewCell.swift; sourceTree = "<group>"; };
 		71E7AFC62911C1B5006A9FAC /* ClassIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassIdentifiable.swift; sourceTree = "<group>"; };
 		71E7AFC82911C63E006A9FAC /* UIView + AddSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + AddSubviews.swift"; sourceTree = "<group>"; };
 		71E7AFCA2911D999006A9FAC /* CALayer + Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer + Shadow.swift"; sourceTree = "<group>"; };
@@ -144,8 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				71F312D729118FA50032E880 /* MainTabBarViewController.swift */,
-				717E785B2911A98700F6155B /* TimersViewController.swift */,
-				717E785D2911AAD200F6155B /* AddressSearchViewController.swift */,
+				717E785B2911A98700F6155B /* BadHabitsViewController.swift */,
 				717E785F2911AAE000F6155B /* ProfileEditViewController.swift */,
 			);
 			path = ViewControllers;
@@ -162,7 +159,7 @@
 		71F312EE2911907D0032E880 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				71E7AFC42911C16B006A9FAC /* TimerTableViewCell.swift */,
+				71E7AFC42911C16B006A9FAC /* BadHabitTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -306,12 +303,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				717E785C2911A98700F6155B /* TimersViewController.swift in Sources */,
+				717E785C2911A98700F6155B /* BadHabitsViewController.swift in Sources */,
 				71E7AFBD2911BAB0006A9FAC /* UIColor + Colors.swift in Sources */,
 				71E7AFCD29129091006A9FAC /* TimersViewModel.swift in Sources */,
 				71E7AFC72911C1B5006A9FAC /* ClassIdentifiable.swift in Sources */,
 				71E7AFCB2911D999006A9FAC /* CALayer + Shadow.swift in Sources */,
-				71E7AFC52911C16B006A9FAC /* TimerTableViewCell.swift in Sources */,
+				71E7AFC52911C16B006A9FAC /* BadHabitTableViewCell.swift in Sources */,
 				71E7AFC32911BF6B006A9FAC /* Timer.swift in Sources */,
 				71F312DE29118FA50032E880 /* Doodze.xcdatamodeld in Sources */,
 				71E7AFC92911C63E006A9FAC /* UIView + AddSubviews.swift in Sources */,
@@ -323,7 +320,6 @@
 				71F312D629118FA50032E880 /* SceneDelegate.swift in Sources */,
 				717E78602911AAE000F6155B /* ProfileEditViewController.swift in Sources */,
 				71A54271291351AD00337658 /* Date.swift in Sources */,
-				717E785E2911AAD200F6155B /* AddressSearchViewController.swift in Sources */,
 				71A5426F2913001100337658 /* ScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
