@@ -9,5 +9,6 @@ target 'Doodze' do
 
 pod 'SnapKit'
 pod 'UIColor_Hex_Swift'
+pod 'SwiftLint'
 
 end

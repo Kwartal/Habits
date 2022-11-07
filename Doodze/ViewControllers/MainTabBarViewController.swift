@@ -21,7 +21,6 @@ class MainTabBarViewController: UITabBarController {
         vc1.tabBarItem.image = UIImage(systemName: "clock.arrow.2.circlepath")
 //        vc2.tabBarItem.image = UIImage(systemName: "timer")
         vc3.tabBarItem.image = UIImage(systemName: "person.crop.circle")
-//        vc4.tabBarItem.image = UIImage(systemName: "arrow.down.to.line")
         // FIXME: - Локализация
 
         tabBar.tintColor = .label

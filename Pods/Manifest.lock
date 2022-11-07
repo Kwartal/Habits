@@ -1,20 +1,24 @@
 PODS:
   - SnapKit (5.6.0)
+  - SwiftLint (0.49.1)
   - UIColor_Hex_Swift (5.1.7)
 
 DEPENDENCIES:
   - SnapKit
+  - SwiftLint
   - UIColor_Hex_Swift
 
 SPEC REPOS:
   trunk:
     - SnapKit
+    - SwiftLint
     - UIColor_Hex_Swift
 
 SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SwiftLint: 32ee33ded0636d0905ef6911b2b67bbaeeedafa5
   UIColor_Hex_Swift: 31cd3e47440f07a20d2503a36bb0437a445b3c29
 
-PODFILE CHECKSUM: 6de4c5fdb4c8b16f3b77accf4b498c15fa0a6718
+PODFILE CHECKSUM: 430248e5afe5dcbe7513a364065478a590ac24e0
 
 COCOAPODS: 1.11.3

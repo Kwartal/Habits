@@ -10,7 +10,7 @@ import UIKit
 final class BadHabitsViewController: UIViewController {
     
     
-    private var situationTimers = Situation.timers
+    private var situationBadHabbits = Situation.badHabbits
     // MARK: - UI Elements
     
     private var tableView = UITableView(frame: .zero, style: .grouped)
@@ -59,7 +59,7 @@ extension BadHabitsViewController {
         configureTableView()
         // FIXME: - Локализация
         navigationItem.title = "Добавьте вредную привычку"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .add)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBadHabbit))
         navigationItem.rightBarButtonItem?.width = .leastNonzeroMagnitude
         
         configureConstraints()
@@ -71,22 +71,23 @@ extension BadHabitsViewController {
             $0.leading.trailing.bottom.equalToSuperview()
         }
     }
-    
 }
 
 extension BadHabitsViewController: UITableViewDataSource, UITableViewDelegate {
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        situationTimers.count
+        situationBadHabbits.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: BadHabitTableViewCell.reuseId, for: indexPath) as? BadHabitTableViewCell else { return UITableViewCell() }
+
+        cell.configure(badHabbit: situationBadHabbits[indexPath.row], color: Colors.color(by: indexPath.row))
         
-        cell.configure(timer: situationTimers[indexPath.row], color: Colors.color(by: indexPath.row))
+        return UITableViewCell()
         
-        return cell
     }
 
 }
@@ -95,6 +96,9 @@ extension BadHabitsViewController {
     
     @objc private func addBadHabbit() {
         
+        let vc = SelectBadHabitViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
         
     }
     

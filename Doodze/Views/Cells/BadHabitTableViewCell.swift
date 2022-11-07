@@ -13,7 +13,7 @@ final class BadHabitTableViewCell: UITableViewCell, ClassIdentifiable {
     // MARK: - UI Elements
     
     private var badHabitImageView = UIImageView()
-    private var NameLabel = UILabel()
+    private var nameLabel = UILabel()
     private var badHabitDiscriptionLabel = UILabel()
     private var backingView = UIView()
     
@@ -37,12 +37,12 @@ final class BadHabitTableViewCell: UITableViewCell, ClassIdentifiable {
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 18, bottom: 32, right: 18))
     }
     
-    public func configure(timer: Timer, color: UIColor) {
+    public func configure(badHabbit: BadHabit, color: UIColor) {
         backingView.backgroundColor = color
         
-        badHabitImageView.image = UIImage(named: timer.imageName)
-        NameLabel.text = timer.name
-        badHabitDiscriptionLabel.text = timer.description
+        badHabitImageView.image = UIImage(named: badHabbit.imageName)
+        nameLabel.text = badHabbit.name
+        badHabitDiscriptionLabel.text = badHabbit.description
     }
     
     
@@ -54,7 +54,7 @@ final class BadHabitTableViewCell: UITableViewCell, ClassIdentifiable {
 extension BadHabitTableViewCell {
     
     private func setupSubviews() {
-        contentView.addSubviews(backingView, badHabitImageView, NameLabel, badHabitDiscriptionLabel)
+        contentView.addSubviews(backingView, badHabitImageView, nameLabel, badHabitDiscriptionLabel)
         
         contentView.layer.cornerRadius = 25
         backgroundColor = .clear
@@ -62,8 +62,8 @@ extension BadHabitTableViewCell {
         badHabitImageView.layer.cornerRadius = 25
         badHabitImageView.clipsToBounds = false
         badHabitImageView.contentMode = .scaleAspectFill
-        NameLabel.font = .systemFont(ofSize: 24, weight: .bold)
-        NameLabel.textAlignment = .left
+        nameLabel.font = .systemFont(ofSize: 24, weight: .bold)
+        nameLabel.textAlignment = .left
         
         badHabitDiscriptionLabel.font = .systemFont(ofSize: 18, weight: .regular)
         badHabitDiscriptionLabel.numberOfLines = 0
@@ -82,7 +82,7 @@ extension BadHabitTableViewCell {
             $0.width.greaterThanOrEqualTo(120)
         }
         
-        NameLabel.snp.makeConstraints {
+        nameLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(170)
             
             $0.top.equalToSuperview().offset(32)
@@ -90,8 +90,8 @@ extension BadHabitTableViewCell {
         }
         
         badHabitDiscriptionLabel.snp.makeConstraints {
-            $0.top.equalTo(NameLabel.snp.bottom)
-            $0.leading.equalTo(NameLabel)
+            $0.top.equalTo(nameLabel.snp.bottom)
+            $0.leading.equalTo(nameLabel)
             $0.trailing.equalToSuperview().inset(16)
             $0.bottom.equalToSuperview().inset(16)
         }
