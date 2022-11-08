@@ -9,6 +9,5 @@ target 'Doodze' do
 
 pod 'SnapKit'
 pod 'UIColor_Hex_Swift'
-pod 'SwiftLint', '~> 0.27'
 
 end

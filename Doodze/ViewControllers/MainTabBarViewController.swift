@@ -8,7 +8,6 @@
 import UIKit
 
 class MainTabBarViewController: UITabBarController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -26,5 +25,4 @@ class MainTabBarViewController: UITabBarController {
         tabBar.tintColor = .label
         setViewControllers([vc1, vc3], animated: true)
     }
-
 }

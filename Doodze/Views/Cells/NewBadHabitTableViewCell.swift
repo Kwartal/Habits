@@ -8,11 +8,11 @@
 import UIKit
 
 final class NewBadHabitTableViewCell: UITableViewCell, ClassIdentifiable {
-
     // MARK: - UI Elements
 
     private var nameLabel = UILabel()
     private var backingView = UIView()
+    private var badHabitImageView = UIImageView()
 
     // MARK: - Lifecycle
 
@@ -36,18 +36,16 @@ final class NewBadHabitTableViewCell: UITableViewCell, ClassIdentifiable {
 
     public func configure(badHabbit: BadHabit, color: UIColor) {
         backingView.backgroundColor = color
-
+        badHabitImageView.image = UIImage(named: badHabbit.imageName)
         nameLabel.text = badHabbit.name
     }
-
 }
 
 // MARK: - Layout
 
 extension NewBadHabitTableViewCell {
-
     private func setupSubviews() {
-        contentView.addSubviews(backingView, nameLabel)
+        contentView.addSubviews(backingView, nameLabel, badHabitImageView)
 
         contentView.layer.cornerRadius = 25
         backgroundColor = .clear
@@ -58,23 +56,24 @@ extension NewBadHabitTableViewCell {
         backingView.layer.cornerRadius = 25
 
         configureConstraints()
-
     }
 
     private func configureConstraints() {
 
+        badHabitImageView.snp.makeConstraints {
+            $0.leading.equalToSuperview().offset(16)
+            $0.centerY.equalToSuperview()
+            $0.size.equalTo(40)
+        }
+
         nameLabel.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(170)
-
+            $0.leading.equalTo(badHabitImageView.snp.trailing).offset(16)
             $0.top.equalToSuperview().offset(32)
-
         }
 
         backingView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(8)
             $0.leading.trailing.bottom.equalToSuperview()
-
         }
     }
-
 }

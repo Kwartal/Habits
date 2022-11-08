@@ -8,7 +8,6 @@
 import UIKit
 
 extension UIView {
-
     func addSubviews(_ views: UIView...) {
         views.forEach { addSubview($0) }
     }
@@ -42,5 +41,4 @@ extension UIView {
     var className: String {
         return String(describing: type(of: self))
     }
-
 }

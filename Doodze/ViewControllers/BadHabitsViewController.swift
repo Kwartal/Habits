@@ -8,7 +8,6 @@
 import UIKit
 
 final class BadHabitsViewController: UIViewController {
-
     private var situationBadHabbits = Situation.badHabbits
     // MARK: - UI Elements
 
@@ -38,7 +37,6 @@ final class BadHabitsViewController: UIViewController {
         tableView.rowHeight = 220
         tableView.separatorStyle = .none
         tableView.backgroundColor = .white
-
     }
 
     // MARK: - Actions
@@ -48,7 +46,6 @@ final class BadHabitsViewController: UIViewController {
 // MARK: - Layout
 
 extension BadHabitsViewController {
-
     private func addSubviews() {
         view.addSubview(tableView)
     }
@@ -73,10 +70,8 @@ extension BadHabitsViewController {
 }
 
 extension BadHabitsViewController: UITableViewDataSource, UITableViewDelegate {
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         situationBadHabbits.count
-
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -85,19 +80,13 @@ extension BadHabitsViewController: UITableViewDataSource, UITableViewDelegate {
         cell.configure(badHabbit: situationBadHabbits[indexPath.row], color: Colors.color(by: indexPath.row))
 
         return UITableViewCell()
-
     }
-
 }
 
 extension BadHabitsViewController {
-
     @objc private func addBadHabbit() {
-
         let vc = SelectBadHabitViewController()
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
-
     }
-
 }

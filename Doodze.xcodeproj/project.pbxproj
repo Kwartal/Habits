@@ -29,11 +29,10 @@
 		71F312DE29118FA50032E880 /* Doodze.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71F312DC29118FA50032E880 /* Doodze.xcdatamodeld */; };
 		71F312E029118FA70032E880 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71F312DF29118FA70032E880 /* Assets.xcassets */; };
 		71F312E329118FA70032E880 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71F312E129118FA70032E880 /* LaunchScreen.storyboard */; };
-		EAFBE0229ACEA13EA3455273 /* Pods_Doodze.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E632145F9965D7280128ADC /* Pods_Doodze.framework */; };
+		A47F019F4872BE5AB4781A57 /* Pods_Doodze.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA23A25EB8AE114B1D4CAED8 /* Pods_Doodze.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6E632145F9965D7280128ADC /* Pods_Doodze.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doodze.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		717E785B2911A98700F6155B /* BadHabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadHabitsViewController.swift; sourceTree = "<group>"; };
 		717E785F2911AAE000F6155B /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		71A5426E2913001100337658 /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
@@ -58,8 +57,9 @@
 		71F312DF29118FA70032E880 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71F312E229118FA70032E880 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71F312E429118FA70032E880 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A8EF6E767822FC22BAC58248 /* Pods-Doodze.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doodze.debug.xcconfig"; path = "Target Support Files/Pods-Doodze/Pods-Doodze.debug.xcconfig"; sourceTree = "<group>"; };
-		D06CEB428536890D46E182B7 /* Pods-Doodze.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doodze.release.xcconfig"; path = "Target Support Files/Pods-Doodze/Pods-Doodze.release.xcconfig"; sourceTree = "<group>"; };
+		B5CAA68A3E506E2051CFC942 /* Pods-Doodze.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doodze.debug.xcconfig"; path = "Target Support Files/Pods-Doodze/Pods-Doodze.debug.xcconfig"; sourceTree = "<group>"; };
+		CC8CBBD79751E20461CB50C7 /* Pods-Doodze.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doodze.release.xcconfig"; path = "Target Support Files/Pods-Doodze/Pods-Doodze.release.xcconfig"; sourceTree = "<group>"; };
+		FA23A25EB8AE114B1D4CAED8 /* Pods_Doodze.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doodze.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAFBE0229ACEA13EA3455273 /* Pods_Doodze.framework in Frameworks */,
+				A47F019F4872BE5AB4781A57 /* Pods_Doodze.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,8 +77,8 @@
 		3F46C9A6AB0DD7BDE3D6531C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A8EF6E767822FC22BAC58248 /* Pods-Doodze.debug.xcconfig */,
-				D06CEB428536890D46E182B7 /* Pods-Doodze.release.xcconfig */,
+				B5CAA68A3E506E2051CFC942 /* Pods-Doodze.debug.xcconfig */,
+				CC8CBBD79751E20461CB50C7 /* Pods-Doodze.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -89,7 +89,7 @@
 				71F312D229118FA50032E880 /* Doodze */,
 				71F312D129118FA50032E880 /* Products */,
 				3F46C9A6AB0DD7BDE3D6531C /* Pods */,
-				EF92CB1F8C13213CA7E9E139 /* Frameworks */,
+				83C2478011D8666500985B04 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -187,10 +187,10 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		EF92CB1F8C13213CA7E9E139 /* Frameworks */ = {
+		83C2478011D8666500985B04 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6E632145F9965D7280128ADC /* Pods_Doodze.framework */,
+				FA23A25EB8AE114B1D4CAED8 /* Pods_Doodze.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -202,11 +202,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 71F312E729118FA70032E880 /* Build configuration list for PBXNativeTarget "Doodze" */;
 			buildPhases = (
-				29EA398EFADA68570B84B418 /* [CP] Check Pods Manifest.lock */,
+				DADF1B097275DCF77BB84CFB /* [CP] Check Pods Manifest.lock */,
 				71F312CC29118FA50032E880 /* Sources */,
 				71F312CD29118FA50032E880 /* Frameworks */,
 				71F312CE29118FA50032E880 /* Resources */,
-				5F6311C012AC6A6B2521974B /* [CP] Embed Pods Frameworks */,
+				984EF2AFB01A87AA4424F7D1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -263,7 +263,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		29EA398EFADA68570B84B418 /* [CP] Check Pods Manifest.lock */ = {
+		984EF2AFB01A87AA4424F7D1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Doodze/Pods-Doodze-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Doodze/Pods-Doodze-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Doodze/Pods-Doodze-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DADF1B097275DCF77BB84CFB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -283,23 +300,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5F6311C012AC6A6B2521974B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Doodze/Pods-Doodze-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Doodze/Pods-Doodze-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Doodze/Pods-Doodze-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -462,7 +462,7 @@
 		};
 		71F312E829118FA70032E880 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8EF6E767822FC22BAC58248 /* Pods-Doodze.debug.xcconfig */;
+			baseConfigurationReference = B5CAA68A3E506E2051CFC942 /* Pods-Doodze.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -492,7 +492,7 @@
 		};
 		71F312E929118FA70032E880 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D06CEB428536890D46E182B7 /* Pods-Doodze.release.xcconfig */;
+			baseConfigurationReference = CC8CBBD79751E20461CB50C7 /* Pods-Doodze.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

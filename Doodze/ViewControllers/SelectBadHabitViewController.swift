@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 final class SelectBadHabitViewController: UIViewController {
-
     private var situationBadHabbits = Situation.badHabbits
 
     // MARK: - UI Elements
@@ -35,20 +34,19 @@ final class SelectBadHabitViewController: UIViewController {
 
     // MARK: - Actions
     private func configureTableView() {
-        tableView.register(BadHabitTableViewCell.self, forCellReuseIdentifier: BadHabitTableViewCell.reuseId)
+        tableView.register(NewBadHabitTableViewCell.self, forCellReuseIdentifier: NewBadHabitTableViewCell.reuseId)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 110
         tableView.separatorStyle = .none
-        tableView.backgroundColor = .yellow
-    }
+        tableView.backgroundColor = UIColor(hexString: "03C7BE")
 
+    }
 }
 
 // MARK: - Layout
 
 extension SelectBadHabitViewController {
-
     private func addSubviews() {
         view.addSubviews(tableView)
     }
@@ -68,18 +66,15 @@ extension SelectBadHabitViewController {
 }
 
 extension SelectBadHabitViewController: UITableViewDataSource, UITableViewDelegate {
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         situationBadHabbits.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: BadHabitTableViewCell.reuseId, for: indexPath) as? BadHabitTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: NewBadHabitTableViewCell.reuseId, for: indexPath) as? NewBadHabitTableViewCell else { return UITableViewCell() }
 
         cell.configure(badHabbit: situationBadHabbits[indexPath.row], color: Colors.color(by: indexPath.row))
 
         return cell
-
     }
-
 }

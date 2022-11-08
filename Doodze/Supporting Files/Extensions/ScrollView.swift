@@ -8,7 +8,6 @@
 import UIKit
 
 final class ScrollView: UIScrollView {
-
     private(set) lazy var contentView = UIView()
 
     override init(frame: CGRect) {
@@ -27,5 +26,4 @@ final class ScrollView: UIScrollView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 }

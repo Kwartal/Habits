@@ -8,7 +8,6 @@
 import Foundation
 
 struct BadHabit {
-
     let name: String
     let imageName: String
     let description: String
@@ -18,5 +17,4 @@ struct BadHabit {
         self.imageName = imageName
         self.description = description
     }
-
 }

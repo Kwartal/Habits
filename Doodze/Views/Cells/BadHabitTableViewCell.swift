@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 final class BadHabitTableViewCell: UITableViewCell, ClassIdentifiable {
-
     // MARK: - UI Elements
 
     private var badHabitImageView = UIImageView()
@@ -44,13 +43,11 @@ final class BadHabitTableViewCell: UITableViewCell, ClassIdentifiable {
         nameLabel.text = badHabbit.name
         badHabitDiscriptionLabel.text = badHabbit.description
     }
-
 }
 
 // MARK: - Layout
 
 extension BadHabitTableViewCell {
-
     private func setupSubviews() {
         contentView.addSubviews(backingView, badHabitImageView, nameLabel, badHabitDiscriptionLabel)
 
@@ -69,11 +66,9 @@ extension BadHabitTableViewCell {
         backingView.layer.cornerRadius = 25
 
         configureConstraints()
-
     }
 
     private func configureConstraints() {
-
         badHabitImageView.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.leading.equalToSuperview().offset(32)
@@ -84,7 +79,6 @@ extension BadHabitTableViewCell {
             $0.leading.equalToSuperview().offset(170)
 
             $0.top.equalToSuperview().offset(32)
-
         }
 
         badHabitDiscriptionLabel.snp.makeConstraints {
@@ -97,8 +91,6 @@ extension BadHabitTableViewCell {
         backingView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(8)
             $0.leading.trailing.bottom.equalToSuperview()
-
         }
     }
-
 }

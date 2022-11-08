@@ -8,7 +8,6 @@
 import UIKit
 
 extension UIColor {
-
     convenience init(_ red: Int, _ green: Int, _ blue: Int, _ alpha: CGFloat = 1.0) {
         assert(red >= 0 && red <= 255, "Invalid red component")
         assert(green >= 0 && green <= 255, "Invalid green component")
@@ -71,5 +70,4 @@ extension UIColor {
             lroundf(Float(blue * multiplier))
         )
     }
-
 }

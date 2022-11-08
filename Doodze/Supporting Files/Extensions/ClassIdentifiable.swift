@@ -12,17 +12,14 @@ protocol ClassIdentifiable {
 }
 
 extension ClassIdentifiable {
-
     static var reuseId: String {
         return String(describing: self)
     }
-
 }
 
 // MARK: - UITableViewCell
 
 extension UITableView {
-
     func register<T: UITableViewCell>(cellType: T.Type) where T: ClassIdentifiable {
         register(cellType.self, forCellReuseIdentifier: cellType.reuseId)
     }
@@ -40,13 +37,11 @@ extension UITableView {
 
         return cell
     }
-
 }
 
 // MARK: - UITableViewHeaderFooterView
 
 extension UITableView {
-
     func registerHeaderFooterView<T: UITableViewHeaderFooterView>(viewType: T.Type) where T: ClassIdentifiable {
         register(viewType.self, forHeaderFooterViewReuseIdentifier: viewType.reuseId)
     }
@@ -57,23 +52,19 @@ extension UITableView {
 
         return view
     }
-
 }
 
 // MARK: - Dequeue Error Method
 
 extension UITableView {
-
     private func dequeueError(reuseId: String) -> String {
         return "Couldn't dequeue cell with identifier \(reuseId)"
     }
-
 }
 
 // MARK: - UICollectionViewCell
 
 extension UICollectionView {
-
     func register<C: UICollectionViewCell>(cellType: C.Type) where C: ClassIdentifiable {
         register(cellType.self, forCellWithReuseIdentifier: cellType.reuseId)
     }
@@ -84,13 +75,11 @@ extension UICollectionView {
 
         return cell
     }
-
 }
 
 // MARK: - UICollectionReusableView
 
 extension UICollectionView {
-
     enum SupplymentaryViewKind {
         case header
         case footer
@@ -115,15 +104,12 @@ extension UICollectionView {
 
         return view
     }
-
 }
 
 // MARK: - Dequeue Error Method
 
 extension UICollectionView {
-
     private func makeItemError<T>(withIdentifier reuseIdentifier: String, type _: T) -> String {
         return "Couldn't dequeue \(T.self) with identifier \(reuseIdentifier)"
     }
-
 }

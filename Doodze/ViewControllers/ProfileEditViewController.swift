@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 final class ProfileEditViewController: UIViewController {
-
     // MARK: - UI Elements
 
     private var scrollView = UIScrollView()
@@ -59,7 +58,6 @@ final class ProfileEditViewController: UIViewController {
 // MARK: - Layout
 
 extension ProfileEditViewController {
-
     private func addSubviews() {
         view.addSubviews(scrollView)
         scrollView.addSubviews(scrollContentView)
@@ -69,7 +67,6 @@ extension ProfileEditViewController {
 
         femaleButton.addSubviews(femaleImageView, femaleLabel)
         maleButton.addSubviews(maleImageView, maleLabel)
-
     }
 
     private func setupSubviews() {
@@ -168,7 +165,6 @@ extension ProfileEditViewController {
         cityTextField.font = .systemFont(ofSize: 16, weight: .regular)
         cityTextField.backgroundColor = UIColor(hexString: "ECECEC")
         cityTextField.layer.cornerRadius = 10
-
     }
 
     private func configureConstraints() {
@@ -294,16 +290,10 @@ extension ProfileEditViewController {
             $0.width.equalTo(305)
         }
 
-        //        datePicker.snp.makeConstraints {
-        //            $0.top.equalToSuperview().offset(10)
-        //            $0.leading.trailing.equalToSuperview().inset(15)
-        //            $0.bottom.equalToSuperview().offset(10)
-        //        }
     }
 }
 
 extension ProfileEditViewController {
-
     @objc private func changeButtonDidTap() {
         print("changeButtonDidTap tap")
     }
@@ -316,11 +306,9 @@ extension ProfileEditViewController {
         print("changePhotoButtonDidTap tap")
     }
     @objc private func handleDatePicker(_ datePicker: UIDatePicker) {
-
         let components = datePicker.date.get(.day, .month, .year)
         if let day = components.day, let month = components.month, let year = components.year {
             dateTextField.text = "\(day).\(month).\(year)"
         }
     }
-
 }

@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 public class Colors {
-
     /**
      (light: "#FFFFFF", dark: "#000000") Основной цвет фона
      */
