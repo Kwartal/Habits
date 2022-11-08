@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct BadHabit {
+struct BadHabit: Codable, Equatable, Hashable {
     let name: String
     let imageName: String
     let description: String

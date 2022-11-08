@@ -47,7 +47,6 @@ final class ProfileEditViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("privet3")
         setupSubviews()
     }
 
@@ -295,15 +294,15 @@ extension ProfileEditViewController {
 
 extension ProfileEditViewController {
     @objc private func changeButtonDidTap() {
-        print("changeButtonDidTap tap")
+        
     }
 
     @objc private func saveButtonDidTap() {
-        print("changeButtonDidTap tap")
+
     }
 
     @objc private func changePhotoButtonDidTap() {
-        print("changePhotoButtonDidTap tap")
+
     }
     @objc private func handleDatePicker(_ datePicker: UIDatePicker) {
         let components = datePicker.date.get(.day, .month, .year)

@@ -7,9 +7,13 @@
 
 import UIKit
 import SnapKit
+import CoreData
 
 final class SelectBadHabitViewController: UIViewController {
+
     private var situationBadHabbits = Situation.badHabbits
+    private let appDelegate = UIApplication.shared.delegate as! AppDelegate //Singlton instance
+    private var context: NSManagedObjectContext!
 
     // MARK: - UI Elements
 
@@ -28,25 +32,33 @@ final class SelectBadHabitViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonPressed))
+        
         setupSubviews()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+
     // MARK: - Actions
+
     private func configureTableView() {
         tableView.register(NewBadHabitTableViewCell.self, forCellReuseIdentifier: NewBadHabitTableViewCell.reuseId)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 110
         tableView.separatorStyle = .none
-        tableView.backgroundColor = UIColor(hexString: "03C7BE")
-
+        tableView.backgroundColor = .clear
     }
+
 }
 
 // MARK: - Layout
 
 extension SelectBadHabitViewController {
+
     private func addSubviews() {
         view.addSubviews(tableView)
     }
@@ -55,6 +67,7 @@ extension SelectBadHabitViewController {
         addSubviews()
         configureTableView()
         configureConstraints()
+
     }
 
     private func configureConstraints() {
@@ -63,18 +76,55 @@ extension SelectBadHabitViewController {
             $0.leading.trailing.bottom.equalToSuperview()
         }
     }
+
+    @objc private func backButtonPressed() {
+        navigationController?.popViewController(animated: false)
+    }
 }
 
+// MARK: - UITableViewDataSource, UITableViewDelegate
+
 extension SelectBadHabitViewController: UITableViewDataSource, UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         situationBadHabbits.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         guard let cell = tableView.dequeueReusableCell(withIdentifier: NewBadHabitTableViewCell.reuseId, for: indexPath) as? NewBadHabitTableViewCell else { return UITableViewCell() }
-
         cell.configure(badHabbit: situationBadHabbits[indexPath.row], color: Colors.color(by: indexPath.row))
-
         return cell
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let habit = situationBadHabbits[indexPath.row]
+        context = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "HabitEntity", in: context)
+        let newHabit = NSManagedObject(entity: entity!, insertInto: context)
+        saveData(UserDBObj: newHabit, habit: habit)
+        var test : [BadHabit] = []
+        
+        navigationController?.popViewController(animated: false)
+
+
+
+    }
+}
+
+extension SelectBadHabitViewController {
+
+    func saveData(UserDBObj: NSManagedObject, habit: BadHabit) {
+        UserDBObj.setValue(habit.name, forKey: "name")
+        UserDBObj.setValue(habit.imageName, forKey: "imageName")
+        UserDBObj.setValue(habit.description, forKey: "descr")
+
+        print("Storing Data..")
+        do {
+            try context.save()
+        } catch {
+            print("Storing data Failed")
+        }
+    }
+
 }

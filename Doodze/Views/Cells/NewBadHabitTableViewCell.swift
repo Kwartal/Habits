@@ -13,6 +13,7 @@ final class NewBadHabitTableViewCell: UITableViewCell, ClassIdentifiable {
     private var nameLabel = UILabel()
     private var backingView = UIView()
     private var badHabitImageView = UIImageView()
+    private var plusImageView = UIImageView(image: UIImage(systemName: "plus.circle"))
 
     // MARK: - Lifecycle
 
@@ -30,7 +31,7 @@ final class NewBadHabitTableViewCell: UITableViewCell, ClassIdentifiable {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-
+        // FIXME: - Добавить тени для backingview
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 18, bottom: 32, right: 18))
     }
 
@@ -41,19 +42,19 @@ final class NewBadHabitTableViewCell: UITableViewCell, ClassIdentifiable {
     }
 }
 
-// MARK: - Layout
+    // MARK: - Layout
 
 extension NewBadHabitTableViewCell {
     private func setupSubviews() {
-        contentView.addSubviews(backingView, nameLabel, badHabitImageView)
-
-        contentView.layer.cornerRadius = 25
+        contentView.addSubviews(backingView, nameLabel, badHabitImageView, plusImageView)
         backgroundColor = .clear
 
-        nameLabel.font = .systemFont(ofSize: 24, weight: .bold)
+        nameLabel.font = .systemFont(ofSize: 24, weight: .semibold)
         nameLabel.textAlignment = .left
 
         backingView.layer.cornerRadius = 25
+
+        plusImageView.tintColor = .black
 
         configureConstraints()
     }
@@ -68,12 +69,17 @@ extension NewBadHabitTableViewCell {
 
         nameLabel.snp.makeConstraints {
             $0.leading.equalTo(badHabitImageView.snp.trailing).offset(16)
-            $0.top.equalToSuperview().offset(32)
+            $0.centerY.equalToSuperview()
         }
 
         backingView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(8)
-            $0.leading.trailing.bottom.equalToSuperview()
+            $0.edges.equalToSuperview()
+        }
+
+        plusImageView.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.trailing.equalToSuperview().inset(16)
+            $0.size.equalTo(40)
         }
     }
 }

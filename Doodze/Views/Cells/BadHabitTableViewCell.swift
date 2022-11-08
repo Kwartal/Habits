@@ -57,6 +57,7 @@ extension BadHabitTableViewCell {
         badHabitImageView.layer.cornerRadius = 25
         badHabitImageView.clipsToBounds = false
         badHabitImageView.contentMode = .scaleAspectFill
+        
         nameLabel.font = .systemFont(ofSize: 24, weight: .bold)
         nameLabel.textAlignment = .left
 
@@ -86,6 +87,7 @@ extension BadHabitTableViewCell {
             $0.leading.equalTo(nameLabel)
             $0.trailing.equalToSuperview().inset(16)
             $0.bottom.equalToSuperview().inset(16)
+            $0.height.lessThanOrEqualTo(100)
         }
 
         backingView.snp.makeConstraints {
