@@ -10,7 +10,7 @@ import CoreData
 
 final class BadHabitsViewController: UIViewController {
 
-    private var savedHabits = [BadHabit]() 
+    private var savedHabits = [BadHabit]()
     
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate //Singlton instance
     private var context: NSManagedObjectContext!
@@ -33,8 +33,13 @@ final class BadHabitsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        openDatabse()
         setupSubviews()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        fetchData()
     }
 
     private func configureTableView() {
@@ -74,7 +79,7 @@ extension BadHabitsViewController {
         // FIXME: - Локализация
         navigationItem.title = "Добавьте вредную привычку"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBadHabbit))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(reloadTable))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(resetAllRecords))
 
     }
 }
@@ -88,6 +93,7 @@ extension BadHabitsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: BadHabitTableViewCell.reuseId, for: indexPath) as? BadHabitTableViewCell else { return UITableViewCell() }
         cell.configure(badHabbit: savedHabits[indexPath.row], color: Colors.color(by: indexPath.row))
+
         return cell
     }
 }
@@ -99,39 +105,46 @@ extension BadHabitsViewController {
         navigationController?.pushViewController(vc, animated: false)
     }
 
-    @objc private func reloadTable() {
-        UserDefaults.Key.clearableKeys.forEach {
-            UserDefaults.standard.removeObject(forKey: $0.rawValue)
-        }
-        tableView.reloadData()
-        print("reloadTable")
-
-    }
 }
 
 extension BadHabitsViewController {
 
-    func openDatabse() {
-        context = appDelegate.persistentContainer.viewContext
-//        let entity = NSEntityDescription.entity(forEntityName: "HabitEntity", in: context)
-//        let newUser = NSManagedObject(entity: entity!, insertInto: context)
-    }
-
     func fetchData() {
+        savedHabits = []
+        context = appDelegate.persistentContainer.viewContext
         print("Fetching Data..")
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "HabitEntity")
         request.returnsObjectsAsFaults = false
         do {
             let result = try context.fetch(request)
             for data in result as! [NSManagedObject] {
-                let name = data.value(forKey: "name") as! String
-                let imageName = data.value(forKey: "imageName") as! String
-                let descr = data.value(forKey: "descr") as! String
+                let name = data.value(forKey: "name") as? String ?? ""
+                let imageName = data.value(forKey: "imageName") as? String ?? ""
+                let descr = data.value(forKey: "descr") as? String ?? ""
                 print("User Name is : "+name+" and Age is : "+imageName+" and "+descr)
+                let model = BadHabit(name: name, imageName: imageName, description: descr)
+                savedHabits.append(model)
+                tableView.reloadData()
             }
         } catch {
             print("Fetching data Failed")
         }
     }
 
+    @objc private func resetAllRecords() {
+
+        let context = ( UIApplication.shared.delegate as! AppDelegate ).persistentContainer.viewContext
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "HabitEntity")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+        do
+        {
+            try context.execute(deleteRequest)
+            try context.save()
+            tableView.reloadData()
+        }
+        catch
+        {
+            print ("There was an error")
+        }
+    }
 }

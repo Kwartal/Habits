@@ -103,8 +103,6 @@ extension SelectBadHabitViewController: UITableViewDataSource, UITableViewDelega
         let entity = NSEntityDescription.entity(forEntityName: "HabitEntity", in: context)
         let newHabit = NSManagedObject(entity: entity!, insertInto: context)
         saveData(UserDBObj: newHabit, habit: habit)
-        var test : [BadHabit] = []
-        
         navigationController?.popViewController(animated: false)
 
 
@@ -125,6 +123,7 @@ extension SelectBadHabitViewController {
         } catch {
             print("Storing data Failed")
         }
+
     }
 
 }
