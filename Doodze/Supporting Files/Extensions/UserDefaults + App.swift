@@ -23,7 +23,7 @@ extension UserDefaults {
         set { standard.setValue(newValue, forKey: #function) }
     }
 
-    static var savedHabits: [BadHabit] {
+    static var savedHabits: [Habit] {
         get { decode(for: .savedHabits) ?? [] }
         set { encode(value: newValue, for: .savedHabits) }
     }

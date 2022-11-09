@@ -10,15 +10,13 @@ import CoreData
 
 final class BadHabitsViewController: UIViewController {
 
-    private var savedHabits = [BadHabit]()
-    
-    private let appDelegate = UIApplication.shared.delegate as! AppDelegate //Singlton instance
+    private var savedHabits = [Habit]()
+    private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private var context: NSManagedObjectContext!
 
     // MARK: - UI Elements
 
     private var tableView = UITableView(frame: .zero, style: .grouped)
-
 
     // MARK: - Lifecycle
 
@@ -33,6 +31,7 @@ final class BadHabitsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         setupSubviews()
     }
 
@@ -56,12 +55,12 @@ final class BadHabitsViewController: UIViewController {
 // MARK: - Layout
 
 extension BadHabitsViewController {
+
     private func addSubviews() {
         view.addSubviews(tableView)
     }
 
     private func setupSubviews() {
-
         addSubviews()
         configureTableView()
         configureConstraints()
@@ -80,27 +79,26 @@ extension BadHabitsViewController {
         navigationItem.title = "Добавьте вредную привычку"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBadHabbit))
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(resetAllRecords))
-
     }
 }
 
 extension BadHabitsViewController: UITableViewDataSource, UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return savedHabits.count
-
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: BadHabitTableViewCell.reuseId, for: indexPath) as? BadHabitTableViewCell else { return UITableViewCell() }
         cell.configure(badHabbit: savedHabits[indexPath.row], color: Colors.color(by: indexPath.row))
-
         return cell
     }
+
 }
 
 extension BadHabitsViewController {
-    @objc private func addBadHabbit() {
 
+    @objc private func addBadHabbit() {
         let vc = SelectBadHabitViewController()
         navigationController?.pushViewController(vc, animated: false)
     }
@@ -122,7 +120,7 @@ extension BadHabitsViewController {
                 let imageName = data.value(forKey: "imageName") as? String ?? ""
                 let descr = data.value(forKey: "descr") as? String ?? ""
                 print("User Name is : "+name+" and Age is : "+imageName+" and "+descr)
-                let model = BadHabit(name: name, imageName: imageName, description: descr)
+                let model = Habit(name: name, imageName: imageName, description: descr)
                 savedHabits.append(model)
                 tableView.reloadData()
             }

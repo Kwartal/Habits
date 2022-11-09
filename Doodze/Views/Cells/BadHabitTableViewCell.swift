@@ -36,7 +36,7 @@ final class BadHabitTableViewCell: UITableViewCell, ClassIdentifiable {
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 18, bottom: 32, right: 18))
     }
 
-    public func configure(badHabbit: BadHabit, color: UIColor) {
+    public func configure(badHabbit: Habit, color: UIColor) {
         backingView.backgroundColor = color
 
         badHabitImageView.image = UIImage(named: badHabbit.imageName)

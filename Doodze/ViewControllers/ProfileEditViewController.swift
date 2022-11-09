@@ -30,7 +30,6 @@ final class ProfileEditViewController: UIViewController {
     private var dateLabel = UILabel()
     private var dateTextField = UITextField()
     private var datePicker = UIDatePicker()
-
     private var cityLabel = UILabel()
     private var cityTextField = UITextField()
 
@@ -47,6 +46,7 @@ final class ProfileEditViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         setupSubviews()
     }
 
@@ -294,7 +294,7 @@ extension ProfileEditViewController {
 
 extension ProfileEditViewController {
     @objc private func changeButtonDidTap() {
-        
+
     }
 
     @objc private func saveButtonDidTap() {
@@ -304,6 +304,7 @@ extension ProfileEditViewController {
     @objc private func changePhotoButtonDidTap() {
 
     }
+
     @objc private func handleDatePicker(_ datePicker: UIDatePicker) {
         let components = datePicker.date.get(.day, .month, .year)
         if let day = components.day, let month = components.month, let year = components.year {
