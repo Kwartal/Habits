@@ -1,5 +1,5 @@
 //
-//  SelectBadHabitViewController.swift
+//  SelectHabitViewController.swift
 //  Doodze
 //
 //  Created by Богдан Баринов on 07.11.2022.
@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import CoreData
 
-final class SelectBadHabitViewController: UIViewController {
+final class SelectHabitViewController: UIViewController {
     
     private var situationBadHabbits = Mock.habbits
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -58,7 +58,7 @@ final class SelectBadHabitViewController: UIViewController {
 
 // MARK: - Layout
 
-extension SelectBadHabitViewController {
+extension SelectHabitViewController {
     
     private func addSubviews() {
         view.addSubviews(tableView)
@@ -85,7 +85,7 @@ extension SelectBadHabitViewController {
 
 // MARK: - UITableViewDataSource, UITableViewDelegate
 
-extension SelectBadHabitViewController: UITableViewDataSource, UITableViewDelegate {
+extension SelectHabitViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         situationBadHabbits.count
@@ -104,11 +104,13 @@ extension SelectBadHabitViewController: UITableViewDataSource, UITableViewDelega
         let entity = NSEntityDescription.entity(forEntityName: "HabitEntity", in: context)
         let newHabit = NSManagedObject(entity: entity!, insertInto: context)
         saveData(UserDBObj: newHabit, habit: habit)
-        navigationController?.popViewController(animated: false)
+//        navigationController?.popViewController(animated: false)
+        let vc = UINavigationController(rootViewController: SetupHabitViewController())
+        present(vc, animated: false)
     }
 }
 
-extension SelectBadHabitViewController {
+extension SelectHabitViewController {
     
     func saveData(UserDBObj: NSManagedObject, habit: Habit) {
         UserDBObj.setValue(habit.name, forKey: "name")

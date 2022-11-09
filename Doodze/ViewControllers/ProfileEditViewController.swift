@@ -159,7 +159,7 @@ extension ProfileEditViewController {
         cityLabel.font = .systemFont(ofSize: 14, weight: .regular)
         cityLabel.textColor = UIColor(hexString: "878787")
 
-        cityTextField.text = UserDefaults.standard.string(forKey: "name")
+        cityTextField.text = UserDefaults.standard.string(forKey: "city")
         cityTextField.textColor = UIColor(hexString: "181818")
         cityTextField.font = .systemFont(ofSize: 16, weight: .regular)
         cityTextField.backgroundColor = UIColor(hexString: "ECECEC")

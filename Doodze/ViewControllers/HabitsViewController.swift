@@ -1,5 +1,5 @@
 //
-//  BadHabitsViewController.swift
+//  HabitsViewController.swift
 //  Doodze
 //
 //  Created by Богдан Баринов on 01.11.2022.
@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-final class BadHabitsViewController: UIViewController {
+final class HabitsViewController: UIViewController {
 
     private var savedHabits = [Habit]()
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -42,7 +42,7 @@ final class BadHabitsViewController: UIViewController {
     }
 
     private func configureTableView() {
-        tableView.register(BadHabitTableViewCell.self, forCellReuseIdentifier: BadHabitTableViewCell.reuseId)
+        tableView.register(HabitTableViewCell.self, forCellReuseIdentifier: HabitTableViewCell.reuseId)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 220
@@ -54,7 +54,7 @@ final class BadHabitsViewController: UIViewController {
 
 // MARK: - Layout
 
-extension BadHabitsViewController {
+extension HabitsViewController {
 
     private func addSubviews() {
         view.addSubviews(tableView)
@@ -82,30 +82,30 @@ extension BadHabitsViewController {
     }
 }
 
-extension BadHabitsViewController: UITableViewDataSource, UITableViewDelegate {
+extension HabitsViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return savedHabits.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: BadHabitTableViewCell.reuseId, for: indexPath) as? BadHabitTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: HabitTableViewCell.reuseId, for: indexPath) as? HabitTableViewCell else { return UITableViewCell() }
         cell.configure(badHabbit: savedHabits[indexPath.row], color: Colors.color(by: indexPath.row))
         return cell
     }
 
 }
 
-extension BadHabitsViewController {
+extension HabitsViewController {
 
     @objc private func addBadHabbit() {
-        let vc = SelectBadHabitViewController()
+        let vc = SelectHabitViewController()
         navigationController?.pushViewController(vc, animated: false)
     }
 
 }
 
-extension BadHabitsViewController {
+extension HabitsViewController {
 
     func fetchData() {
         savedHabits = []

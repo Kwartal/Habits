@@ -1,5 +1,5 @@
 //
-//  BadHabitTableViewCell.swift
+//  HabitTableViewCell.swift
 //  Doodze
 //
 //  Created by Богдан Баринов on 02.11.2022.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class BadHabitTableViewCell: UITableViewCell, ClassIdentifiable {
+final class HabitTableViewCell: UITableViewCell, ClassIdentifiable {
     // MARK: - UI Elements
 
     private var badHabitImageView = UIImageView()
@@ -47,7 +47,7 @@ final class BadHabitTableViewCell: UITableViewCell, ClassIdentifiable {
 
 // MARK: - Layout
 
-extension BadHabitTableViewCell {
+extension HabitTableViewCell {
     private func setupSubviews() {
         contentView.addSubviews(backingView, badHabitImageView, nameLabel, badHabitDiscriptionLabel)
 

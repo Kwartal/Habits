@@ -13,7 +13,7 @@ class MainTabBarViewController: UITabBarController {
         super.viewDidLoad()
         view.backgroundColor = .white
 
-        let vc1 = UINavigationController(rootViewController: BadHabitsViewController())
+        let vc1 = UINavigationController(rootViewController: HabitsViewController())
         let vc3 = UINavigationController(rootViewController: ProfileEditViewController())
 
         vc1.tabBarItem.image = UIImage(systemName: "clock.arrow.2.circlepath")
