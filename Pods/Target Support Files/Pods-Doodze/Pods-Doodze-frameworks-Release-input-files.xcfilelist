@@ -1,3 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-Doodze/Pods-Doodze-frameworks.sh
+${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework
 ${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
 ${BUILT_PRODUCTS_DIR}/UIColor_Hex_Swift/UIColor_Hex_Swift.framework

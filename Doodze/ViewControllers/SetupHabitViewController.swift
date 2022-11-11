@@ -16,12 +16,17 @@ final class SetupHabitViewController: UIViewController {
     private var aboutMeView = UIView()
     private var selectDataLabel = UILabel()
     private var datePicker = UIDatePicker()
-    private var numberCigaretteView = UIView()
-    private var howCigaretteLabel = UILabel()
-    private var itemCounterView = UIView()
-    private var minusNumberOfItemButton = UIButton()
-    private var plusNumberOfItemButton = UIButton()
-    private var currentNumberItemLabel = UILabel()
+    private var quantityOfCigarettesView = UIView()
+    private var cigarettePerDayLabel = UILabel()
+    private var cigarettePerDayStepper = UIStepper()
+    private var cigarettePerDayView = UIView()
+    private var cigarettePerDayCounterLabel = UILabel()
+    private var priceOfPackView = UIView()
+    private var cigarettePerPackLabel = UILabel()
+    private var cigarettePerPackStepper = UIStepper()
+    private var cigarettePerPackView = UIView()
+    private var cigarettePerPackCounterLabel = UILabel()
+
 
 
     // MARK: - Lifecycle
@@ -53,10 +58,14 @@ final class SetupHabitViewController: UIViewController {
 extension SetupHabitViewController {
 
     private func addSubviews() {
-        view.addSubviews(aboutMeView, numberCigaretteView)
+        view.addSubviews(aboutMeView, quantityOfCigarettesView, priceOfPackView)
         aboutMeView.addSubviews(selectDataLabel, datePicker)
-        numberCigaretteView.addSubviews(howCigaretteLabel, itemCounterView)
-        itemCounterView.addSubviews(minusNumberOfItemButton, currentNumberItemLabel, plusNumberOfItemButton)
+
+        quantityOfCigarettesView.addSubviews(cigarettePerDayLabel, cigarettePerDayStepper, cigarettePerDayView)
+        cigarettePerDayView.addSubview(cigarettePerDayCounterLabel)
+
+        priceOfPackView.addSubviews(cigarettePerPackStepper, cigarettePerPackView, cigarettePerPackLabel)
+        cigarettePerPackView.addSubview(cigarettePerPackCounterLabel)
     }
 
     private func setupSubviews() {
@@ -74,33 +83,29 @@ extension SetupHabitViewController {
         datePicker.date = Date()
         datePicker.datePickerMode = .date
         datePicker.locale = datePicker.calendar.locale
-        datePicker.preferredDatePickerStyle = .automatic
 
-        numberCigaretteView.backgroundColor = UIColor(hexString: "FFFFFF")
-        numberCigaretteView.layer.cornerRadius = 10
+        quantityOfCigarettesView.backgroundColor = UIColor(hexString: "FFFFFF")
+        quantityOfCigarettesView.layer.cornerRadius = 10
 
-        howCigaretteLabel.text = "Сигареты / День"
-        howCigaretteLabel.font = .systemFont(ofSize: 18, weight: .semibold)
-        howCigaretteLabel.textColor = .black
+        cigarettePerDayLabel.text = "Сигареты / День"
+        cigarettePerDayLabel.font = .systemFont(ofSize: 18, weight: .semibold)
+        cigarettePerDayLabel.textColor = .black
 
+        cigarettePerDayStepper.addTarget(self, action: #selector(stepperValueChanged), for: .valueChanged)
 
-        itemCounterView.backgroundColor = .gray.withAlphaComponent(0.1)
-        itemCounterView.layer.cornerRadius = 20
+        cigarettePerDayView.backgroundColor = UIColor(hexString: "EFEFF0")
+        cigarettePerDayView.layer.cornerRadius = 10
 
+        cigarettePerDayCounterLabel.textColor = .black
+        cigarettePerDayCounterLabel.font = .systemFont(ofSize: 18, weight: .semibold)
+        cigarettePerDayCounterLabel.backgroundColor = UIColor(hexString: "EDEDED")
+        cigarettePerDayCounterLabel.text = "0"
+        cigarettePerDayCounterLabel.textAlignment = .center
+        cigarettePerDayCounterLabel.layer.cornerRadius = 10
 
-        minusNumberOfItemButton.setTitle("-", for: .normal)
-        minusNumberOfItemButton.titleLabel?.font = .systemFont(ofSize: 25, weight: .regular)
-        minusNumberOfItemButton.addTarget(self, action: #selector(numbersOfItemButtonDidTap(sender:)), for: .touchUpInside)
-
-        plusNumberOfItemButton.setTitle("+", for: .normal)
-        plusNumberOfItemButton.titleLabel?.font = .systemFont(ofSize: 25, weight: .regular)
-        plusNumberOfItemButton.setTitleColor(.black, for: .normal)
-        plusNumberOfItemButton.addTarget(self, action: #selector(numbersOfItemButtonDidTap(sender:)), for: .touchUpInside)
-
-        currentNumberItemLabel.text = "1"
-        currentNumberItemLabel.textColor = .white
-        currentNumberItemLabel.font = .systemFont(ofSize: 20, weight: .bold)
-        currentNumberItemLabel.textAlignment = .center
+        priceOfPackView.backgroundColor = UIColor(hexString: "FFFFFF")
+        priceOfPackView.layer.cornerRadius = 10
+        priceOfPackView.layer.apply(.buttonDark)
 
         configureConstraints()
     }
@@ -123,46 +128,43 @@ extension SetupHabitViewController {
 
         datePicker.snp.makeConstraints {
             $0.centerY.equalTo(aboutMeView)
-            $0.trailing.equalToSuperview().inset(16)
+            $0.leading.equalToSuperview().offset(200)
         }
 
-        numberCigaretteView.snp.makeConstraints {
+        quantityOfCigarettesView.snp.makeConstraints {
             $0.top.equalTo(aboutMeView.snp.bottom).offset(27)
             $0.leading.trailing.equalToSuperview().inset(16)
-            $0.centerX.equalTo(view.center.x)
             $0.height.equalTo(60)
         }
 
-        howCigaretteLabel.snp.makeConstraints {
+        cigarettePerDayLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(16)
-            $0.centerY.equalTo(numberCigaretteView)
+            $0.centerY.equalTo(quantityOfCigarettesView)
             $0.height.equalTo(21)
             $0.width.equalTo(151)
         }
 
-        itemCounterView.snp.makeConstraints {
-            $0.trailing.equalToSuperview().inset(16)
-            $0.centerY.equalTo(numberCigaretteView)
-            $0.height.equalTo(45)
-            $0.width.equalTo(90)
+        cigarettePerDayStepper.snp.makeConstraints {
+            $0.centerY.equalTo(quantityOfCigarettesView)
+            $0.leading.equalToSuperview().offset(200)
         }
 
-        plusNumberOfItemButton.snp.makeConstraints {
-            $0.trailing.equalToSuperview().inset(8)
-            $0.centerY.equalTo(numberCigaretteView)
-            $0.size.equalTo(30)
+        cigarettePerDayView.snp.makeConstraints {
+            $0.leading.equalTo(cigarettePerDayStepper.snp.trailing).offset(8)
+            $0.centerY.equalTo(quantityOfCigarettesView)
+            $0.height.equalTo(30)
+            $0.width.equalTo(50)
         }
 
-        currentNumberItemLabel.snp.makeConstraints {
-            $0.trailing.equalTo(plusNumberOfItemButton.snp.leading).offset(6)
-            $0.centerY.equalTo(numberCigaretteView)
-            $0.size.equalTo(30)
+        cigarettePerDayCounterLabel.snp.makeConstraints {
+            $0.centerY.centerX.equalTo(cigarettePerDayView)
         }
 
-        minusNumberOfItemButton.snp.makeConstraints {
-            $0.trailing.equalTo(currentNumberItemLabel.snp.leading).offset(6)
-            $0.centerY.equalTo(numberCigaretteView)
-            $0.size.equalTo(30)
+        priceOfPackView.snp.makeConstraints {
+            $0.top.equalTo(quantityOfCigarettesView.snp.bottom).offset(27)
+            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.centerX.equalTo(view.center.x)
+            $0.height.equalTo(60)
         }
 
     }
@@ -176,17 +178,8 @@ extension SetupHabitViewController {
 
 extension SetupHabitViewController {
 
-    @objc private func numbersOfItemButtonDidTap(sender: UIButton) {
-        guard var currentValue = Int(currentNumberItemLabel.text ?? "0") else { return }
-
-        if sender == minusNumberOfItemButton && currentValue > 0 {
-            currentValue -= 1
-        } else if sender == plusNumberOfItemButton {
-            currentValue += 1
-        } else if currentValue == 0 {
-            currentNumberItemLabel.textColor = .gray.withAlphaComponent(0.3)
-        }
-        currentNumberItemLabel.text = String(currentValue)
+    @objc private func stepperValueChanged(sender: UIButton) {
+        cigarettePerDayCounterLabel.text = String(format: "%.00f", cigarettePerDayStepper.value)
     }
 
 }

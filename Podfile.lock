@@ -1,20 +1,28 @@
 PODS:
+  - R.swift (6.1.0):
+    - R.swift.Library (~> 5.3.0)
+  - R.swift.Library (5.3.0)
   - SnapKit (5.6.0)
   - UIColor_Hex_Swift (5.1.7)
 
 DEPENDENCIES:
+  - R.swift
   - SnapKit
   - UIColor_Hex_Swift
 
 SPEC REPOS:
   trunk:
+    - R.swift
+    - R.swift.Library
     - SnapKit
     - UIColor_Hex_Swift
 
 SPEC CHECKSUMS:
+  R.swift: ec98ff71c4ab2f6fd01dd077e5afd15e63a4834c
+  R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   UIColor_Hex_Swift: 31cd3e47440f07a20d2503a36bb0437a445b3c29
 
-PODFILE CHECKSUM: 6de4c5fdb4c8b16f3b77accf4b498c15fa0a6718
+PODFILE CHECKSUM: bc5d4b02d1b8e5431b4156a5944b145c43126acd
 
 COCOAPODS: 1.11.3

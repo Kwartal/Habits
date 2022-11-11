@@ -58,13 +58,15 @@ extension HabitTableViewCell {
         badHabitImageView.clipsToBounds = false
         badHabitImageView.contentMode = .scaleAspectFill
         
-        nameLabel.font = .systemFont(ofSize: 24, weight: .bold)
+        nameLabel.font = .systemFont(ofSize: 24, weight: .semibold)
         nameLabel.textAlignment = .left
+        nameLabel.textDropShadow()
 
         badHabitDiscriptionLabel.font = .systemFont(ofSize: 18, weight: .regular)
         badHabitDiscriptionLabel.numberOfLines = 0
 
         backingView.layer.cornerRadius = 25
+        backingView.layer.apply(.buttonDark)
 
         configureConstraints()
     }

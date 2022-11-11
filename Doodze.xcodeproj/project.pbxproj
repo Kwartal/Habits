@@ -11,6 +11,9 @@
 		71128C78291B103100E0A70E /* HabitModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71128C76291B103100E0A70E /* HabitModel.xcdatamodeld */; };
 		71128C9D291B2B9D00E0A70E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71128C9C291B2B9D00E0A70E /* CoreDataManager.swift */; };
 		71128CA1291C2B9C00E0A70E /* SetupHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71128CA0291C2B9C00E0A70E /* SetupHabitViewController.swift */; };
+		711C1A01291DB4B8002A6BBD /* LayerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711C1A00291DB4B8002A6BBD /* LayerStyle.swift */; };
+		711C1A03291DB5EB002A6BBD /* UIColor + App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711C1A02291DB5EB002A6BBD /* UIColor + App.swift */; };
+		711C1A05291DB677002A6BBD /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711C1A04291DB677002A6BBD /* GlobalVariables.swift */; };
 		717E785C2911A98700F6155B /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E785B2911A98700F6155B /* HabitsViewController.swift */; };
 		717E78602911AAE000F6155B /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E785F2911AAE000F6155B /* ProfileEditViewController.swift */; };
 		71A5426F2913001100337658 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5426E2913001100337658 /* ScrollView.swift */; };
@@ -18,6 +21,8 @@
 		71AC1C8629199B2C00220D31 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC1C8529199B2C00220D31 /* Habit.swift */; };
 		71AC1C8829199F2C00220D31 /* SelectHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC1C8729199F2C00220D31 /* SelectHabitViewController.swift */; };
 		71AC1C8A2919B0BF00220D31 /* NewBadHabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC1C892919B0BF00220D31 /* NewBadHabitTableViewCell.swift */; };
+		71BA7F38291DBA2600D3A0A1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BA7F37291DBA2600D3A0A1 /* R.generated.swift */; };
+		71BA7F3A291DCA1200D3A0A1 /* UILabel + TextShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BA7F39291DCA1200D3A0A1 /* UILabel + TextShadow.swift */; };
 		71E7AFBB2911BA14006A9FAC /* UIColor + Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7AFBA2911BA14006A9FAC /* UIColor + Hex.swift */; };
 		71E7AFBD2911BAB0006A9FAC /* UIColor + Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7AFBC2911BAB0006A9FAC /* UIColor + Colors.swift */; };
 		71E7AFBF2911BAD3006A9FAC /* UIColor + Creator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7AFBE2911BAD3006A9FAC /* UIColor + Creator.swift */; };
@@ -40,6 +45,9 @@
 		71128C77291B103100E0A70E /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		71128C9C291B2B9D00E0A70E /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		71128CA0291C2B9C00E0A70E /* SetupHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupHabitViewController.swift; sourceTree = "<group>"; };
+		711C1A00291DB4B8002A6BBD /* LayerStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerStyle.swift; sourceTree = "<group>"; };
+		711C1A02291DB5EB002A6BBD /* UIColor + App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + App.swift"; sourceTree = "<group>"; };
+		711C1A04291DB677002A6BBD /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
 		717E785B2911A98700F6155B /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
 		717E785F2911AAE000F6155B /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		71A5426E2913001100337658 /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
@@ -47,6 +55,8 @@
 		71AC1C8529199B2C00220D31 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		71AC1C8729199F2C00220D31 /* SelectHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectHabitViewController.swift; sourceTree = "<group>"; };
 		71AC1C892919B0BF00220D31 /* NewBadHabitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBadHabitTableViewCell.swift; sourceTree = "<group>"; };
+		71BA7F37291DBA2600D3A0A1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		71BA7F39291DCA1200D3A0A1 /* UILabel + TextShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + TextShadow.swift"; sourceTree = "<group>"; };
 		71E7AFBA2911BA14006A9FAC /* UIColor + Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Hex.swift"; sourceTree = "<group>"; };
 		71E7AFBC2911BAB0006A9FAC /* UIColor + Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Colors.swift"; sourceTree = "<group>"; };
 		71E7AFBE2911BAD3006A9FAC /* UIColor + Creator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Creator.swift"; sourceTree = "<group>"; };
@@ -147,6 +157,11 @@
 				71A54270291351AD00337658 /* Date.swift */,
 				71128C74291AF22000E0A70E /* UserDefaults + App.swift */,
 				71128C9C291B2B9D00E0A70E /* CoreDataManager.swift */,
+				711C1A00291DB4B8002A6BBD /* LayerStyle.swift */,
+				711C1A02291DB5EB002A6BBD /* UIColor + App.swift */,
+				711C1A04291DB677002A6BBD /* GlobalVariables.swift */,
+				71BA7F37291DBA2600D3A0A1 /* R.generated.swift */,
+				71BA7F39291DCA1200D3A0A1 /* UILabel + TextShadow.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -212,6 +227,7 @@
 			buildConfigurationList = 71F312E729118FA70032E880 /* Build configuration list for PBXNativeTarget "Doodze" */;
 			buildPhases = (
 				DADF1B097275DCF77BB84CFB /* [CP] Check Pods Manifest.lock */,
+				71BA7F36291DB8E000D3A0A1 /* ShellScript */,
 				71F312CC29118FA50032E880 /* Sources */,
 				71F312CD29118FA50032E880 /* Frameworks */,
 				71F312CE29118FA50032E880 /* Resources */,
@@ -272,6 +288,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		71BA7F36291DB8E000D3A0A1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"",
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 		984EF2AFB01A87AA4424F7D1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -318,10 +354,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				711C1A03291DB5EB002A6BBD /* UIColor + App.swift in Sources */,
 				717E785C2911A98700F6155B /* HabitsViewController.swift in Sources */,
+				711C1A01291DB4B8002A6BBD /* LayerStyle.swift in Sources */,
 				71128CA1291C2B9C00E0A70E /* SetupHabitViewController.swift in Sources */,
 				71E7AFBD2911BAB0006A9FAC /* UIColor + Colors.swift in Sources */,
 				71128C78291B103100E0A70E /* HabitModel.xcdatamodeld in Sources */,
+				711C1A05291DB677002A6BBD /* GlobalVariables.swift in Sources */,
 				71E7AFC72911C1B5006A9FAC /* ClassIdentifiable.swift in Sources */,
 				71E7AFCB2911D999006A9FAC /* CALayer + Shadow.swift in Sources */,
 				71E7AFC52911C16B006A9FAC /* HabitTableViewCell.swift in Sources */,
@@ -332,9 +371,11 @@
 				71E7AFC92911C63E006A9FAC /* UIView + AddSubviews.swift in Sources */,
 				71F312D829118FA50032E880 /* MainTabBarViewController.swift in Sources */,
 				71AC1C8629199B2C00220D31 /* Habit.swift in Sources */,
+				71BA7F3A291DCA1200D3A0A1 /* UILabel + TextShadow.swift in Sources */,
 				71E7AFBB2911BA14006A9FAC /* UIColor + Hex.swift in Sources */,
 				71F312D429118FA50032E880 /* AppDelegate.swift in Sources */,
 				71E7AFBF2911BAD3006A9FAC /* UIColor + Creator.swift in Sources */,
+				71BA7F38291DBA2600D3A0A1 /* R.generated.swift in Sources */,
 				71E7AFC12911BF0D006A9FAC /* Mock.swift in Sources */,
 				71F312D629118FA50032E880 /* SceneDelegate.swift in Sources */,
 				717E78602911AAE000F6155B /* ProfileEditViewController.swift in Sources */,

@@ -18,3 +18,4 @@ struct Habit: Codable, Equatable, Hashable {
         self.description = description
     }
 }
+
