@@ -21,12 +21,16 @@ final class SetupHabitViewController: UIViewController {
     private var cigarettePerDayStepper = UIStepper()
     private var cigarettePerDayView = UIView()
     private var cigarettePerDayCounterLabel = UILabel()
-    private var priceOfPackView = UIView()
+    private var cigaretteInPackView = UIView()
     private var cigarettePerPackLabel = UILabel()
     private var cigarettePerPackStepper = UIStepper()
-    private var cigarettePerPackView = UIView()
+    private var cigarettePerPackCounterView = UIView()
     private var cigarettePerPackCounterLabel = UILabel()
-
+    private var packPriceView = UIView()
+    private var packPriceLabel = UILabel()
+    private var packPriceTextField = UITextField()
+    private var currencyView = UIView()
+    private var currencyLabel = UILabel()
 
 
     // MARK: - Lifecycle
@@ -58,14 +62,16 @@ final class SetupHabitViewController: UIViewController {
 extension SetupHabitViewController {
 
     private func addSubviews() {
-        view.addSubviews(aboutMeView, quantityOfCigarettesView, priceOfPackView)
+        view.addSubviews(aboutMeView, quantityOfCigarettesView, cigaretteInPackView, packPriceView, currencyView)
         aboutMeView.addSubviews(selectDataLabel, datePicker)
 
         quantityOfCigarettesView.addSubviews(cigarettePerDayLabel, cigarettePerDayStepper, cigarettePerDayView)
         cigarettePerDayView.addSubview(cigarettePerDayCounterLabel)
 
-        priceOfPackView.addSubviews(cigarettePerPackStepper, cigarettePerPackView, cigarettePerPackLabel)
-        cigarettePerPackView.addSubview(cigarettePerPackCounterLabel)
+        cigaretteInPackView.addSubviews(cigarettePerPackStepper, cigarettePerPackCounterView, cigarettePerPackLabel)
+        cigarettePerPackCounterView.addSubview(cigarettePerPackCounterLabel)
+        packPriceView.addSubviews(packPriceLabel, packPriceTextField)
+        currencyView.addSubviews(currencyLabel)
     }
 
     private func setupSubviews() {
@@ -77,7 +83,7 @@ extension SetupHabitViewController {
         aboutMeView.layer.cornerRadius = 10
 
         selectDataLabel.text = "Выберите дату"
-        selectDataLabel.font = .systemFont(ofSize: 18, weight: .semibold)
+        selectDataLabel.font = .systemFont(ofSize: 16, weight: .regular)
         selectDataLabel.textColor = .black
 
         datePicker.date = Date()
@@ -86,29 +92,73 @@ extension SetupHabitViewController {
 
         quantityOfCigarettesView.backgroundColor = UIColor(hexString: "FFFFFF")
         quantityOfCigarettesView.layer.cornerRadius = 10
+        quantityOfCigarettesView.layer.apply(.buttonDark)
 
         cigarettePerDayLabel.text = "Сигареты / День"
-        cigarettePerDayLabel.font = .systemFont(ofSize: 18, weight: .semibold)
+        cigarettePerDayLabel.font = .systemFont(ofSize: 16, weight: .regular)
         cigarettePerDayLabel.textColor = .black
 
-        cigarettePerDayStepper.addTarget(self, action: #selector(stepperValueChanged), for: .valueChanged)
+        cigarettePerDayStepper.addTarget(self, action: #selector(stepperCigarettePerDayValueChanged), for: .valueChanged)
 
         cigarettePerDayView.backgroundColor = UIColor(hexString: "EFEFF0")
         cigarettePerDayView.layer.cornerRadius = 10
 
         cigarettePerDayCounterLabel.textColor = .black
-        cigarettePerDayCounterLabel.font = .systemFont(ofSize: 18, weight: .semibold)
+        cigarettePerDayCounterLabel.font = .systemFont(ofSize: 16, weight: .regular)
         cigarettePerDayCounterLabel.backgroundColor = UIColor(hexString: "EDEDED")
         cigarettePerDayCounterLabel.text = "0"
         cigarettePerDayCounterLabel.textAlignment = .center
         cigarettePerDayCounterLabel.layer.cornerRadius = 10
 
-        priceOfPackView.backgroundColor = UIColor(hexString: "FFFFFF")
-        priceOfPackView.layer.cornerRadius = 10
-        priceOfPackView.layer.apply(.buttonDark)
+        cigaretteInPackView.backgroundColor = UIColor(hexString: "FFFFFF")
+        cigaretteInPackView.layer.cornerRadius = 10
+        cigaretteInPackView.layer.apply(.buttonDark)
+
+        cigarettePerPackLabel.text = "Сигареты / Пачка"
+        cigarettePerPackLabel.font = .systemFont(ofSize: 16, weight: .regular)
+        cigarettePerPackLabel.textColor = .black
+
+        cigarettePerPackStepper.addTarget(self, action: #selector(stepperCigarettePerPackValueChanged), for: .valueChanged)
+        cigarettePerPackStepper.backgroundColor = .red
+
+        cigarettePerPackCounterView.backgroundColor = UIColor(hexString: "EFEFF0")
+        cigarettePerPackCounterView.layer.cornerRadius = 10
+
+        cigarettePerPackCounterLabel.textColor = .black
+        cigarettePerPackCounterLabel.font = .systemFont(ofSize: 16, weight: .regular)
+        cigarettePerPackCounterLabel.backgroundColor = UIColor(hexString: "EDEDED")
+        cigarettePerPackCounterLabel.text = "0"
+        cigarettePerPackCounterLabel.textAlignment = .center
+        cigarettePerPackCounterLabel.layer.cornerRadius = 10
+
+        packPriceView.backgroundColor = UIColor(hexString: "FFFFFF")
+        packPriceView.layer.cornerRadius = 10
+        packPriceView.layer.apply(.buttonDark)
+
+
+        packPriceLabel.text = "Цена / Пачка"
+        packPriceLabel.font = .systemFont(ofSize: 16, weight: .regular)
+        packPriceLabel.textColor = .black
+
+        packPriceTextField.backgroundColor = UIColor(hexString: "EFEFF0")
+        packPriceTextField.font = .systemFont(ofSize: 16, weight: .regular)
+        packPriceTextField.text = UserDefaults.standard.string(forKey: "price")
+        packPriceTextField.textColor = UIColor(hexString: "181818")
+        packPriceTextField.layer.cornerRadius = 10
+
+
+        currencyView.backgroundColor = UIColor(hexString: "FFFFFF")
+        currencyView.layer.cornerRadius = 10
+        currencyView.layer.apply(.buttonDark)
+
+        currencyLabel.text = "Валюта"
+        currencyLabel.font = .systemFont(ofSize: 16, weight: .regular)
+        currencyLabel.textColor = .black
+
 
         configureConstraints()
     }
+
 
     private func configureConstraints() {
 
@@ -152,7 +202,7 @@ extension SetupHabitViewController {
         cigarettePerDayView.snp.makeConstraints {
             $0.leading.equalTo(cigarettePerDayStepper.snp.trailing).offset(8)
             $0.centerY.equalTo(quantityOfCigarettesView)
-            $0.height.equalTo(30)
+            $0.height.equalTo(32)
             $0.width.equalTo(50)
         }
 
@@ -160,11 +210,70 @@ extension SetupHabitViewController {
             $0.centerY.centerX.equalTo(cigarettePerDayView)
         }
 
-        priceOfPackView.snp.makeConstraints {
+        cigaretteInPackView.snp.makeConstraints {
             $0.top.equalTo(quantityOfCigarettesView.snp.bottom).offset(27)
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.centerX.equalTo(view.center.x)
             $0.height.equalTo(60)
+        }
+
+        cigarettePerPackLabel.snp.makeConstraints {
+            $0.leading.equalToSuperview().offset(16)
+            $0.centerY.equalTo(cigaretteInPackView)
+            $0.height.equalTo(21)
+            $0.width.equalTo(151)
+        }
+
+        cigarettePerPackCounterView.snp.makeConstraints {
+            $0.trailing.equalToSuperview().inset(16)
+//            $0.centerY.equalTo(cigaretteInPackView)
+            $0.height.equalTo(32)
+            $0.width.equalTo(50)
+        }
+
+        // FIXME: - Исправить констрейнты
+        cigarettePerPackStepper.snp.makeConstraints {
+            $0.centerY.equalTo(cigaretteInPackView)
+            $0.trailing.equalTo(cigarettePerPackCounterView.snp.leading).inset(8)
+        }
+
+        cigarettePerPackCounterLabel.snp.makeConstraints {
+            $0.centerY.centerX.equalTo(cigarettePerPackCounterView)
+        }
+
+        packPriceView.snp.makeConstraints {
+            $0.top.equalTo(cigaretteInPackView.snp.bottom).offset(27)
+            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.centerX.equalTo(view.center.x)
+            $0.height.equalTo(60)
+        }
+
+        packPriceLabel.snp.makeConstraints {
+            $0.leading.equalToSuperview().offset(16)
+            $0.centerY.equalTo(packPriceView)
+            $0.height.equalTo(21)
+            $0.width.equalTo(151)
+        }
+
+        packPriceTextField.snp.makeConstraints {
+            $0.trailing.equalToSuperview().inset(32)
+            $0.centerY.equalTo(packPriceView)
+            $0.height.equalTo(32)
+            $0.width.equalTo(70)
+        }
+
+        currencyView.snp.makeConstraints {
+            $0.top.equalTo(packPriceView.snp.bottom).offset(27)
+            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.centerX.equalTo(view.center.x)
+            $0.height.equalTo(60)
+        }
+
+        currencyLabel.snp.makeConstraints {
+            $0.leading.equalToSuperview().offset(16)
+            $0.centerY.equalTo(currencyView)
+            $0.height.equalTo(21)
+            $0.width.equalTo(151)
         }
 
     }
@@ -178,8 +287,12 @@ extension SetupHabitViewController {
 
 extension SetupHabitViewController {
 
-    @objc private func stepperValueChanged(sender: UIButton) {
+    @objc private func stepperCigarettePerDayValueChanged() {
         cigarettePerDayCounterLabel.text = String(format: "%.00f", cigarettePerDayStepper.value)
+    }
+
+    @objc private func stepperCigarettePerPackValueChanged() {
+        cigarettePerPackCounterLabel.text = String(format: "%.00f", cigarettePerPackStepper.value)
     }
 
 }
