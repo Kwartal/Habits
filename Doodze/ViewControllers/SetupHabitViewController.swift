@@ -119,7 +119,6 @@ extension SetupHabitViewController {
         cigarettePerPackLabel.textColor = .black
 
         cigarettePerPackStepper.addTarget(self, action: #selector(stepperCigarettePerPackValueChanged), for: .valueChanged)
-        cigarettePerPackStepper.backgroundColor = .red
 
         cigarettePerPackCounterView.backgroundColor = UIColor(hexString: "EFEFF0")
         cigarettePerPackCounterView.layer.cornerRadius = 10
@@ -145,6 +144,8 @@ extension SetupHabitViewController {
         packPriceTextField.text = UserDefaults.standard.string(forKey: "price")
         packPriceTextField.textColor = UIColor(hexString: "181818")
         packPriceTextField.layer.cornerRadius = 10
+        packPriceTextField.delegate = self
+        packPriceTextField.textAlignment = .center
 
 
         currencyView.backgroundColor = UIColor(hexString: "FFFFFF")
@@ -194,16 +195,16 @@ extension SetupHabitViewController {
             $0.width.equalTo(151)
         }
 
-        cigarettePerDayStepper.snp.makeConstraints {
-            $0.centerY.equalTo(quantityOfCigarettesView)
-            $0.leading.equalToSuperview().offset(200)
-        }
-
         cigarettePerDayView.snp.makeConstraints {
-            $0.leading.equalTo(cigarettePerDayStepper.snp.trailing).offset(8)
+            $0.trailing.equalToSuperview().inset(16)
             $0.centerY.equalTo(quantityOfCigarettesView)
             $0.height.equalTo(32)
             $0.width.equalTo(50)
+        }
+
+        cigarettePerDayStepper.snp.makeConstraints {
+            $0.centerY.equalTo(quantityOfCigarettesView)
+            $0.trailing.equalTo(cigarettePerDayView.snp.leading)
         }
 
         cigarettePerDayCounterLabel.snp.makeConstraints {
@@ -226,7 +227,7 @@ extension SetupHabitViewController {
 
         cigarettePerPackCounterView.snp.makeConstraints {
             $0.trailing.equalToSuperview().inset(16)
-//            $0.centerY.equalTo(cigaretteInPackView)
+            $0.centerY.equalTo(cigaretteInPackView)
             $0.height.equalTo(32)
             $0.width.equalTo(50)
         }
@@ -234,7 +235,7 @@ extension SetupHabitViewController {
         // FIXME: - Исправить констрейнты
         cigarettePerPackStepper.snp.makeConstraints {
             $0.centerY.equalTo(cigaretteInPackView)
-            $0.trailing.equalTo(cigarettePerPackCounterView.snp.leading).inset(8)
+            $0.trailing.equalTo(cigarettePerPackCounterView.snp.leading)
         }
 
         cigarettePerPackCounterLabel.snp.makeConstraints {
@@ -256,7 +257,7 @@ extension SetupHabitViewController {
         }
 
         packPriceTextField.snp.makeConstraints {
-            $0.trailing.equalToSuperview().inset(32)
+            $0.trailing.equalToSuperview().inset(16)
             $0.centerY.equalTo(packPriceView)
             $0.height.equalTo(32)
             $0.width.equalTo(70)
@@ -293,6 +294,20 @@ extension SetupHabitViewController {
 
     @objc private func stepperCigarettePerPackValueChanged() {
         cigarettePerPackCounterLabel.text = String(format: "%.00f", cigarettePerPackStepper.value)
+    }
+
+}
+
+extension SetupHabitViewController: UITextFieldDelegate {
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        //For mobile numer validation
+        if textField == packPriceTextField {
+            let allowedCharacters = CharacterSet(charactersIn:".0123456789")//Here change this characters based on your requirement
+            let characterSet = CharacterSet(charactersIn: string)
+            return allowedCharacters.isSuperset(of: characterSet)
+        }
+        return true
     }
 
 }
