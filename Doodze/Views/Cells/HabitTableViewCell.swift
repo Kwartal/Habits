@@ -15,6 +15,7 @@ final class HabitTableViewCell: UITableViewCell, ClassIdentifiable {
     private var nameLabel = UILabel()
     private var badHabitDiscriptionLabel = UILabel()
     private var backingView = UIView()
+    private var test = UILabel()
 
     // MARK: - Lifecycle
 
@@ -49,7 +50,7 @@ final class HabitTableViewCell: UITableViewCell, ClassIdentifiable {
 
 extension HabitTableViewCell {
     private func setupSubviews() {
-        contentView.addSubviews(backingView, badHabitImageView, nameLabel, badHabitDiscriptionLabel)
+        contentView.addSubviews(backingView, badHabitImageView, nameLabel, badHabitDiscriptionLabel, test)
 
         contentView.layer.cornerRadius = 25
         backgroundColor = .clear
@@ -67,6 +68,8 @@ extension HabitTableViewCell {
 
         backingView.layer.cornerRadius = 25
         backingView.layer.apply(.buttonDark)
+
+        test.backgroundColor = .red
 
         configureConstraints()
     }
@@ -95,6 +98,11 @@ extension HabitTableViewCell {
         backingView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(8)
             $0.leading.trailing.bottom.equalToSuperview()
+        }
+
+        test.snp.makeConstraints {
+            $0.leading.bottom.equalToSuperview()
+            $0.size.equalTo(30)
         }
     }
 }

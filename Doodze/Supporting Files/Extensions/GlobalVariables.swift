@@ -10,7 +10,6 @@ typealias Color = R.color
 typealias Image = R.image
 //typealias Localizable = R.string.localizable
 //typealias File = R.file
-
 let newItemId = -1
 
 

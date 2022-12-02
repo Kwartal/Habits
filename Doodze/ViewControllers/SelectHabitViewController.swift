@@ -14,6 +14,7 @@ final class SelectHabitViewController: UIViewController {
     private var situationBadHabbits = Mock.habbits
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private var context: NSManagedObjectContext!
+
     
     // MARK: - UI Elements
     
@@ -104,9 +105,42 @@ extension SelectHabitViewController: UITableViewDataSource, UITableViewDelegate 
         let entity = NSEntityDescription.entity(forEntityName: "HabitEntity", in: context)
         let newHabit = NSManagedObject(entity: entity!, insertInto: context)
         saveData(UserDBObj: newHabit, habit: habit)
-//        navigationController?.popViewController(animated: false)
-        let vc = UINavigationController(rootViewController: SetupHabitViewController())
-        present(vc, animated: false)
+        //        navigationController?.popViewController(animated: false)
+        if habit.name == "Сигареты" {
+            let vc = UINavigationController(rootViewController: SetupCigaretteViewController())
+            present(vc, animated: false)
+        } else if habit.name == "Алкоголь" {
+            let vc = UINavigationController(rootViewController: SetupAlcoholViewController())
+            present(vc, animated: true)
+        } else if habit.name == "Вейпы/Поды" {
+            let vc = UINavigationController(rootViewController: SetupElectronicCigaretteViewController())
+            present(vc, animated: true)
+        } else if habit.name == "Социальные сети" {
+            let vc = UINavigationController(rootViewController: SetupSocialMediaViewController())
+            present(vc, animated: true)
+        } else if habit.name == "Кофе" {
+            let vc = UINavigationController(rootViewController: SetupCoffeeViewController())
+            present(vc, animated: true)
+        } else if habit.name == "Сладкое" {
+            let vc = UINavigationController(rootViewController: SetupElectronicCigaretteViewController())
+            present(vc, animated: true)
+        } else if habit.name == "Марихуана" {
+            let vc = UINavigationController(rootViewController: SetupElectronicCigaretteViewController())
+            present(vc, animated: true)
+        } else if habit.name == "Азартные игры" {
+            let vc = UINavigationController(rootViewController: SetupElectronicCigaretteViewController())
+            present(vc, animated: true)
+        } else if habit.name == "Видео игры" {
+            let vc = UINavigationController(rootViewController: SetupElectronicCigaretteViewController())
+            present(vc, animated: true)
+        } else if habit.name == "Просмотр ТВ" {
+            let vc = UINavigationController(rootViewController: SetupElectronicCigaretteViewController())
+            present(vc, animated: true)
+        }
+
+
+
+
     }
 }
 
