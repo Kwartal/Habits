@@ -20,6 +20,11 @@
 		719CECAF2939FDF500C2BA5E /* SetupElectronicCigaretteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719CECAE2939FDF500C2BA5E /* SetupElectronicCigaretteViewController.swift */; };
 		719CECB1293A008700C2BA5E /* SetupSocialMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719CECB0293A008700C2BA5E /* SetupSocialMediaViewController.swift */; };
 		719CECB3293A08B600C2BA5E /* SetupCoffeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719CECB2293A08B600C2BA5E /* SetupCoffeeViewController.swift */; };
+		719CECB5293A0DE800C2BA5E /* SetupSweetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719CECB4293A0DE800C2BA5E /* SetupSweetsViewController.swift */; };
+		719CECB7293A0E5F00C2BA5E /* SetupMarijuanaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719CECB6293A0E5F00C2BA5E /* SetupMarijuanaViewController.swift */; };
+		719CECB9293A0EAE00C2BA5E /* SetupCasinoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719CECB8293A0EAE00C2BA5E /* SetupCasinoViewController.swift */; };
+		719CECBB293A0EEF00C2BA5E /* SetupVideoGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719CECBA293A0EEF00C2BA5E /* SetupVideoGamesViewController.swift */; };
+		719CECBD293A0F2400C2BA5E /* SetupWatchingTvViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719CECBC293A0F2400C2BA5E /* SetupWatchingTvViewController.swift */; };
 		71A5426F2913001100337658 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5426E2913001100337658 /* ScrollView.swift */; };
 		71A54271291351AD00337658 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A54270291351AD00337658 /* Date.swift */; };
 		71AC1C8629199B2C00220D31 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC1C8529199B2C00220D31 /* Habit.swift */; };
@@ -58,6 +63,11 @@
 		719CECAE2939FDF500C2BA5E /* SetupElectronicCigaretteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupElectronicCigaretteViewController.swift; sourceTree = "<group>"; };
 		719CECB0293A008700C2BA5E /* SetupSocialMediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupSocialMediaViewController.swift; sourceTree = "<group>"; };
 		719CECB2293A08B600C2BA5E /* SetupCoffeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupCoffeeViewController.swift; sourceTree = "<group>"; };
+		719CECB4293A0DE800C2BA5E /* SetupSweetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupSweetsViewController.swift; sourceTree = "<group>"; };
+		719CECB6293A0E5F00C2BA5E /* SetupMarijuanaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupMarijuanaViewController.swift; sourceTree = "<group>"; };
+		719CECB8293A0EAE00C2BA5E /* SetupCasinoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupCasinoViewController.swift; sourceTree = "<group>"; };
+		719CECBA293A0EEF00C2BA5E /* SetupVideoGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupVideoGamesViewController.swift; sourceTree = "<group>"; };
+		719CECBC293A0F2400C2BA5E /* SetupWatchingTvViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupWatchingTvViewController.swift; sourceTree = "<group>"; };
 		71A5426E2913001100337658 /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
 		71A54270291351AD00337658 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		71AC1C8529199B2C00220D31 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
@@ -186,6 +196,11 @@
 				719CECAE2939FDF500C2BA5E /* SetupElectronicCigaretteViewController.swift */,
 				719CECB0293A008700C2BA5E /* SetupSocialMediaViewController.swift */,
 				719CECB2293A08B600C2BA5E /* SetupCoffeeViewController.swift */,
+				719CECB4293A0DE800C2BA5E /* SetupSweetsViewController.swift */,
+				719CECB6293A0E5F00C2BA5E /* SetupMarijuanaViewController.swift */,
+				719CECB8293A0EAE00C2BA5E /* SetupCasinoViewController.swift */,
+				719CECBA293A0EEF00C2BA5E /* SetupVideoGamesViewController.swift */,
+				719CECBC293A0F2400C2BA5E /* SetupWatchingTvViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -366,12 +381,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				719CECBD293A0F2400C2BA5E /* SetupWatchingTvViewController.swift in Sources */,
+				719CECB5293A0DE800C2BA5E /* SetupSweetsViewController.swift in Sources */,
 				711C1A03291DB5EB002A6BBD /* UIColor + App.swift in Sources */,
 				717E785C2911A98700F6155B /* HabitsViewController.swift in Sources */,
 				719CECAF2939FDF500C2BA5E /* SetupElectronicCigaretteViewController.swift in Sources */,
 				719CECB1293A008700C2BA5E /* SetupSocialMediaViewController.swift in Sources */,
 				719CECAD29391CBC00C2BA5E /* SetupAlcoholViewController.swift in Sources */,
+				719CECBB293A0EEF00C2BA5E /* SetupVideoGamesViewController.swift in Sources */,
 				711C1A01291DB4B8002A6BBD /* LayerStyle.swift in Sources */,
+				719CECB9293A0EAE00C2BA5E /* SetupCasinoViewController.swift in Sources */,
 				71128CA1291C2B9C00E0A70E /* SetupCigaretteViewController.swift in Sources */,
 				71E7AFBD2911BAB0006A9FAC /* UIColor + Colors.swift in Sources */,
 				71128C78291B103100E0A70E /* HabitModel.xcdatamodeld in Sources */,
@@ -390,6 +409,7 @@
 				71BA7F3A291DCA1200D3A0A1 /* UILabel + TextShadow.swift in Sources */,
 				71E7AFBB2911BA14006A9FAC /* UIColor + Hex.swift in Sources */,
 				71F312D429118FA50032E880 /* AppDelegate.swift in Sources */,
+				719CECB7293A0E5F00C2BA5E /* SetupMarijuanaViewController.swift in Sources */,
 				71E7AFBF2911BAD3006A9FAC /* UIColor + Creator.swift in Sources */,
 				71BA7F38291DBA2600D3A0A1 /* R.generated.swift in Sources */,
 				71E7AFC12911BF0D006A9FAC /* Mock.swift in Sources */,
@@ -540,6 +560,7 @@
 				DEVELOPMENT_TEAM = Q4YDTP8UWA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Doodze/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow access.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
@@ -570,6 +591,7 @@
 				DEVELOPMENT_TEAM = Q4YDTP8UWA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Doodze/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow access.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = "";

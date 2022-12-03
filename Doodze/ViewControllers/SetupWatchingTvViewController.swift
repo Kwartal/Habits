@@ -1,5 +1,5 @@
 //
-//  SetupCoffeeViewController.swift
+//  SetupWatchingTvViewController.swift
 //  Doodze
 //
 //  Created by Богдан Баринов on 02.12.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SetupCoffeeViewController: UIViewController, UITextFieldDelegate {
+final class SetupWatchingTvViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: - UI Elements
 
@@ -56,7 +56,7 @@ final class SetupCoffeeViewController: UIViewController, UITextFieldDelegate {
 
 // MARK: - Layout
 
-extension SetupCoffeeViewController {
+extension SetupWatchingTvViewController {
 
     private func addSubviews() {
         view.addSubviews(dataView, spendingPerMonthView, doneButton, hoursPerDayView)
@@ -88,7 +88,7 @@ extension SetupCoffeeViewController {
         spendingPerMonthView.layer.apply(.buttonDark)
 
 
-        spendingPerMonthLabel.text = "Кружек / Неделя"
+        spendingPerMonthLabel.text = "Часов / день"
         spendingPerMonthLabel.font = .systemFont(ofSize: 16, weight: .regular)
         spendingPerMonthLabel.textColor = .black
 
@@ -105,7 +105,7 @@ extension SetupCoffeeViewController {
         hoursPerDayView.layer.apply(.buttonDark)
 
 
-        hoursPerDayLabel.text = "Траты / Неделя"
+        hoursPerDayLabel.text = "Траты в месяц"
         hoursPerDayLabel.font = .systemFont(ofSize: 16, weight: .regular)
         hoursPerDayLabel.textColor = .black
 
@@ -179,7 +179,7 @@ extension SetupCoffeeViewController {
             $0.leading.equalToSuperview().offset(16)
             $0.centerY.equalTo(hoursPerDayView)
             $0.height.equalTo(21)
-            $0.width.equalTo(280)
+            $0.width.equalTo(151)
         }
 
         hoursPerDayTextField.snp.makeConstraints {

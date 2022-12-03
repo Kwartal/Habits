@@ -122,19 +122,19 @@ extension SelectHabitViewController: UITableViewDataSource, UITableViewDelegate 
             let vc = UINavigationController(rootViewController: SetupCoffeeViewController())
             present(vc, animated: true)
         } else if habit.name == "Сладкое" {
-            let vc = UINavigationController(rootViewController: SetupElectronicCigaretteViewController())
+            let vc = UINavigationController(rootViewController: SetupSweetsViewController())
             present(vc, animated: true)
         } else if habit.name == "Марихуана" {
-            let vc = UINavigationController(rootViewController: SetupElectronicCigaretteViewController())
+            let vc = UINavigationController(rootViewController: SetupMarijuanaViewController())
             present(vc, animated: true)
         } else if habit.name == "Азартные игры" {
-            let vc = UINavigationController(rootViewController: SetupElectronicCigaretteViewController())
+            let vc = UINavigationController(rootViewController: SetupCasinoViewController())
             present(vc, animated: true)
         } else if habit.name == "Видео игры" {
-            let vc = UINavigationController(rootViewController: SetupElectronicCigaretteViewController())
+            let vc = UINavigationController(rootViewController: SetupVideoGamesViewController())
             present(vc, animated: true)
         } else if habit.name == "Просмотр ТВ" {
-            let vc = UINavigationController(rootViewController: SetupElectronicCigaretteViewController())
+            let vc = UINavigationController(rootViewController: SetupWatchingTvViewController())
             present(vc, animated: true)
         }
 

@@ -33,6 +33,7 @@ final class ProfileEditViewController: UIViewController {
     private var cityLabel = UILabel()
     private var cityTextField = UITextField()
 
+
     // MARK: - Lifecycle
 
     init() {
@@ -51,7 +52,13 @@ final class ProfileEditViewController: UIViewController {
     }
 
     // MARK: - Actions
-
+    @objc private func didTapButton() {
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.delegate = self
+        vc.allowsEditing = true
+        present(vc, animated: true)
+    }
 }
 
 // MARK: - Layout
@@ -88,7 +95,7 @@ extension ProfileEditViewController {
         changePhotoButton.setTitle("Изменить фото", for: .normal)
         changePhotoButton.setTitleColor(.systemBlue, for: .normal)
         changePhotoButton.titleLabel?.font = .systemFont(ofSize: 16, weight: .regular)
-        changePhotoButton.addTarget(self, action: #selector(changePhotoButtonDidTap), for: .touchUpInside)
+        changePhotoButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         // FIXME: - Добавить англ. язык
         aboutMeLabel.text = "Обо мне"
         aboutMeLabel.font = .systemFont(ofSize: 24, weight: .semibold)
@@ -312,4 +319,20 @@ extension ProfileEditViewController {
             dateTextField.text = "\(day).\(month).\(year)"
         }
     }
+}
+
+extension ProfileEditViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
+            profileImageView.image = image
+        }
+
+        picker.dismiss(animated: true, completion: nil)
+    }
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+
 }
