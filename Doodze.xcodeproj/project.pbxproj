@@ -14,8 +14,9 @@
 		711C1A01291DB4B8002A6BBD /* LayerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711C1A00291DB4B8002A6BBD /* LayerStyle.swift */; };
 		711C1A03291DB5EB002A6BBD /* UIColor + App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711C1A02291DB5EB002A6BBD /* UIColor + App.swift */; };
 		711C1A05291DB677002A6BBD /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711C1A04291DB677002A6BBD /* GlobalVariables.swift */; };
+		71443621293DEB9F006C99C5 /* EditingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71443620293DEB9F006C99C5 /* EditingProfileViewController.swift */; };
 		717E785C2911A98700F6155B /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E785B2911A98700F6155B /* HabitsViewController.swift */; };
-		717E78602911AAE000F6155B /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E785F2911AAE000F6155B /* ProfileEditViewController.swift */; };
+		717E78602911AAE000F6155B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E785F2911AAE000F6155B /* ProfileViewController.swift */; };
 		719CECAD29391CBC00C2BA5E /* SetupAlcoholViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719CECAC29391CBC00C2BA5E /* SetupAlcoholViewController.swift */; };
 		719CECAF2939FDF500C2BA5E /* SetupElectronicCigaretteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719CECAE2939FDF500C2BA5E /* SetupElectronicCigaretteViewController.swift */; };
 		719CECB1293A008700C2BA5E /* SetupSocialMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719CECB0293A008700C2BA5E /* SetupSocialMediaViewController.swift */; };
@@ -57,8 +58,9 @@
 		711C1A00291DB4B8002A6BBD /* LayerStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerStyle.swift; sourceTree = "<group>"; };
 		711C1A02291DB5EB002A6BBD /* UIColor + App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + App.swift"; sourceTree = "<group>"; };
 		711C1A04291DB677002A6BBD /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
+		71443620293DEB9F006C99C5 /* EditingProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingProfileViewController.swift; sourceTree = "<group>"; };
 		717E785B2911A98700F6155B /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
-		717E785F2911AAE000F6155B /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
+		717E785F2911AAE000F6155B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		719CECAC29391CBC00C2BA5E /* SetupAlcoholViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupAlcoholViewController.swift; sourceTree = "<group>"; };
 		719CECAE2939FDF500C2BA5E /* SetupElectronicCigaretteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupElectronicCigaretteViewController.swift; sourceTree = "<group>"; };
 		719CECB0293A008700C2BA5E /* SetupSocialMediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupSocialMediaViewController.swift; sourceTree = "<group>"; };
@@ -189,7 +191,8 @@
 			children = (
 				71F312D729118FA50032E880 /* MainTabBarViewController.swift */,
 				717E785B2911A98700F6155B /* HabitsViewController.swift */,
-				717E785F2911AAE000F6155B /* ProfileEditViewController.swift */,
+				717E785F2911AAE000F6155B /* ProfileViewController.swift */,
+				71443620293DEB9F006C99C5 /* EditingProfileViewController.swift */,
 				71AC1C8729199F2C00220D31 /* SelectHabitViewController.swift */,
 				71128CA0291C2B9C00E0A70E /* SetupCigaretteViewController.swift */,
 				719CECAC29391CBC00C2BA5E /* SetupAlcoholViewController.swift */,
@@ -394,6 +397,7 @@
 				71128CA1291C2B9C00E0A70E /* SetupCigaretteViewController.swift in Sources */,
 				71E7AFBD2911BAB0006A9FAC /* UIColor + Colors.swift in Sources */,
 				71128C78291B103100E0A70E /* HabitModel.xcdatamodeld in Sources */,
+				71443621293DEB9F006C99C5 /* EditingProfileViewController.swift in Sources */,
 				711C1A05291DB677002A6BBD /* GlobalVariables.swift in Sources */,
 				71E7AFC72911C1B5006A9FAC /* ClassIdentifiable.swift in Sources */,
 				71E7AFCB2911D999006A9FAC /* CALayer + Shadow.swift in Sources */,
@@ -414,7 +418,7 @@
 				71BA7F38291DBA2600D3A0A1 /* R.generated.swift in Sources */,
 				71E7AFC12911BF0D006A9FAC /* Mock.swift in Sources */,
 				71F312D629118FA50032E880 /* SceneDelegate.swift in Sources */,
-				717E78602911AAE000F6155B /* ProfileEditViewController.swift in Sources */,
+				717E78602911AAE000F6155B /* ProfileViewController.swift in Sources */,
 				71AC1C8A2919B0BF00220D31 /* NewBadHabitTableViewCell.swift in Sources */,
 				71A54271291351AD00337658 /* Date.swift in Sources */,
 				71A5426F2913001100337658 /* ScrollView.swift in Sources */,

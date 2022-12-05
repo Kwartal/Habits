@@ -1,19 +1,19 @@
 //
-//  ProfileEditViewController.swift
+//  EditingProfileViewController.swift
 //  Doodze
 //
-//  Created by Богдан Баринов on 01.11.2022.
+//  Created by Богдан Баринов on 05.12.2022.
 //
 
 import UIKit
-import SnapKit
 
-final class ProfileEditViewController: UIViewController {
+final class EditingProfileViewController: UIViewController {
+
     // MARK: - UI Elements
 
     private var scrollView = UIScrollView()
     private var scrollContentView = UIView()
-    private var nameView = UIView()
+    private var changePhotoView = UIView()
     private var profileImageView = UIImageView()
     private var changePhotoButton = UIButton()
     private var aboutMeLabel = UILabel()
@@ -27,6 +27,8 @@ final class ProfileEditViewController: UIViewController {
     private var maleLabel = UILabel()
     private var nameLabel = UILabel()
     private var nameTextField = UITextField()
+    private var surnameLabel = UILabel()
+    private var surnameTextField = UITextField()
     private var dateLabel = UILabel()
     private var dateTextField = UITextField()
     private var datePicker = UIDatePicker()
@@ -63,13 +65,13 @@ final class ProfileEditViewController: UIViewController {
 
 // MARK: - Layout
 
-extension ProfileEditViewController {
+extension EditingProfileViewController {
     private func addSubviews() {
         view.addSubviews(scrollView)
         scrollView.addSubviews(scrollContentView)
-        scrollContentView.addSubviews(nameView, aboutMeLabel, descriptionLabel, aboutMeView)
-        nameView.addSubviews(profileImageView, changePhotoButton)
-        aboutMeView.addSubviews(femaleButton, maleButton, nameLabel, nameTextField, dateLabel, dateTextField, cityLabel, cityTextField)
+        scrollContentView.addSubviews(changePhotoView, aboutMeLabel, descriptionLabel, aboutMeView)
+        changePhotoView.addSubviews(profileImageView, changePhotoButton)
+        aboutMeView.addSubviews(femaleButton, maleButton, nameLabel, nameTextField, surnameLabel, surnameTextField, dateLabel, dateTextField, cityLabel, cityTextField)
 
         femaleButton.addSubviews(femaleImageView, femaleLabel)
         maleButton.addSubviews(maleImageView, maleLabel)
@@ -79,13 +81,18 @@ extension ProfileEditViewController {
         addSubviews()
         // FIXME: - Добавить англ. язык
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Отменить", style: .done, target: self, action: #selector(changeButtonDidTap))
+        navigationItem.leftBarButtonItem?.tintColor = UIColor(hexString: "181818")
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .done, target: self, action: #selector(saveButtonDidTap))
+        navigationItem.rightBarButtonItem?.tintColor = UIColor(hexString: "181818")
+
+
+        scrollView.contentSize = CGSize(width: 0, height: 1000)
 
         scrollContentView.backgroundColor = .white
 
-        nameView.backgroundColor = UIColor(hexString: "F8F8F8")
-        nameView.layer.cornerRadius = 10
+        changePhotoView.backgroundColor = UIColor(hexString: "F8F8F8")
+        changePhotoView.layer.cornerRadius = 10
 
         profileImageView.image = UIImage(named: "Debil")
         profileImageView.layer.masksToBounds = true
@@ -93,7 +100,7 @@ extension ProfileEditViewController {
 
         // FIXME: - Добавить англ. язык
         changePhotoButton.setTitle("Изменить фото", for: .normal)
-        changePhotoButton.setTitleColor(.systemBlue, for: .normal)
+        changePhotoButton.setTitleColor(UIColor(hexString: "181818"), for: .normal)
         changePhotoButton.titleLabel?.font = .systemFont(ofSize: 16, weight: .regular)
         changePhotoButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         // FIXME: - Добавить англ. язык
@@ -113,6 +120,7 @@ extension ProfileEditViewController {
         femaleButton.layer.cornerRadius = 10
         femaleButton.layer.borderWidth = 1
         femaleButton.layer.borderColor = UIColor(hexString: "FE7B7B")?.cgColor
+        
 
         femaleImageView.image = UIImage(named: "Woman")
         femaleImageView.contentMode = .center
@@ -145,6 +153,16 @@ extension ProfileEditViewController {
         nameTextField.backgroundColor = UIColor(hexString: "ECECEC")
         nameTextField.layer.cornerRadius = 10
 
+        surnameLabel.text = "Фамилия"
+        surnameLabel.font = .systemFont(ofSize: 14, weight: .regular)
+        surnameLabel.textColor = UIColor(hexString: "878787")
+
+        surnameTextField.text = UserDefaults.standard.string(forKey: "surname")
+        surnameTextField.textColor = UIColor(hexString: "181818")
+        surnameTextField.font = .systemFont(ofSize: 16, weight: .regular)
+        surnameTextField.backgroundColor = UIColor(hexString: "ECECEC")
+        surnameTextField.layer.cornerRadius = 10
+
         dateLabel.text = "Дата рождения"
         dateLabel.font = .systemFont(ofSize: 14, weight: .regular)
         dateLabel.textColor = UIColor(hexString: "878787")
@@ -156,6 +174,7 @@ extension ProfileEditViewController {
         datePicker.addTarget(self, action: #selector(handleDatePicker), for: .valueChanged)
 
         dateTextField.inputView = datePicker
+        dateTextField.text = UserDefaults.standard.string(forKey: "date")
         dateTextField.backgroundColor = UIColor(hexString: "ECECEC")
         dateTextField.layer.cornerRadius = 10
         let spacerView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
@@ -180,12 +199,14 @@ extension ProfileEditViewController {
         }
 
         scrollContentView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-            $0.width.equalTo(scrollView)
-            $0.height.equalTo(scrollView).priority(.low)
+//            $0.edges.equalToSuperview()
+//            $0.width.equalTo(scrollView)
+//            $0.height.equalTo(scrollView).priority(.low)
+            $0.size.equalToSuperview()
+
         }
 
-        nameView.snp.makeConstraints {
+        changePhotoView.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(98)
@@ -205,7 +226,7 @@ extension ProfileEditViewController {
 
         aboutMeLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(20)
-            $0.top.equalTo(nameView.snp.bottom).offset(30)
+            $0.top.equalTo(changePhotoView.snp.bottom).offset(30)
         }
 
         descriptionLabel.snp.makeConstraints {
@@ -217,7 +238,7 @@ extension ProfileEditViewController {
         aboutMeView.snp.makeConstraints {
             $0.top.equalTo(descriptionLabel.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(20)
-            $0.height.equalTo(378)
+            $0.height.equalTo(440)
         }
 
         femaleButton.snp.makeConstraints {
@@ -235,7 +256,7 @@ extension ProfileEditViewController {
         }
 
         femaleLabel.snp.makeConstraints {
-            $0.leading.equalTo(femaleImageView.snp.trailing).offset(14)
+            $0.leading.equalTo(femaleImageView.snp.trailing).offset(8)
             $0.top.equalToSuperview().offset(11)
             $0.trailing.equalToSuperview().inset(4)
         }
@@ -272,8 +293,21 @@ extension ProfileEditViewController {
             $0.width.equalTo(305)
         }
 
+        surnameLabel.snp.makeConstraints {
+            $0.top.equalTo(nameTextField.snp.bottom).offset(20)
+            $0.leading.equalToSuperview().offset(15)
+        }
+
+        surnameTextField.snp.makeConstraints {
+            $0.top.equalTo(surnameLabel.snp.bottom).offset(3)
+            $0.leading.trailing.equalToSuperview().inset(15)
+            $0.height.equalTo(48)
+            $0.width.equalTo(305)
+        }
+
+
         dateLabel.snp.makeConstraints {
-            $0.top.equalTo(nameTextField.snp.bottom).offset(31)
+            $0.top.equalTo(surnameTextField.snp.bottom).offset(20)
             $0.leading.equalToSuperview().offset(15)
         }
 
@@ -299,14 +333,22 @@ extension ProfileEditViewController {
     }
 }
 
-extension ProfileEditViewController {
-    
+extension EditingProfileViewController {
+
     @objc private func changeButtonDidTap() {
 
     }
 
     @objc private func saveButtonDidTap() {
+        let name = nameTextField.text
+        let surname = surnameTextField.text
+        let date = dateTextField.text
+        let city = cityTextField.text
 
+        UserDefaults.standard.set(name, forKey: "name")
+        UserDefaults.standard.set(surname, forKey: "surname")
+        UserDefaults.standard.set(date, forKey: "date")
+        UserDefaults.standard.set(city, forKey: "city")
     }
 
     @objc private func changePhotoButtonDidTap() {
@@ -321,7 +363,7 @@ extension ProfileEditViewController {
     }
 }
 
-extension ProfileEditViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension EditingProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
