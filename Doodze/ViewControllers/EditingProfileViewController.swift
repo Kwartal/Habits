@@ -53,6 +53,12 @@ final class EditingProfileViewController: UIViewController {
         setupSubviews()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+
+    }
+
     // MARK: - Actions
     @objc private func didTapButton() {
         let vc = UIImagePickerController()
@@ -80,10 +86,12 @@ extension EditingProfileViewController {
     private func setupSubviews() {
         addSubviews()
         // FIXME: - Добавить англ. язык
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .done, target: self, action: #selector(saveButtonDidTap))
+
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Отменить", style: .done, target: self, action: #selector(changeButtonDidTap))
         navigationItem.leftBarButtonItem?.tintColor = UIColor(hexString: "181818")
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .done, target: self, action: #selector(saveButtonDidTap))
         navigationItem.rightBarButtonItem?.tintColor = UIColor(hexString: "181818")
 
 
