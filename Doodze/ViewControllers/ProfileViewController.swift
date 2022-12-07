@@ -18,7 +18,8 @@ final class ProfileViewController: UIViewController {
 
     private var genderDescriptionLabel = UILabel()
     private var genderViewContainer = UIView()
-    private var genderLabel = UILabel()
+    private var femaleLabel = UILabel()
+    private var maleLabel = UILabel()
 
     private var nameDescriptionLabel = UILabel()
     private var nameViewContainer = UIView()
@@ -56,6 +57,11 @@ final class ProfileViewController: UIViewController {
         setupSubviews()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupSubviews()
+
+    }
     // MARK: - Actions
     @objc private func didTapButton() {
         let vc = UIImagePickerController()
@@ -74,7 +80,7 @@ extension ProfileViewController {
         scrollView.addSubviews(scrollContentView)
         scrollContentView.addSubviews(nameView, editButton)
         nameView.addSubviews(profileImageView, nameDescriptionLabel, nameViewContainer, surnameDescriptionLabel, surnameViewContainer, genderDescriptionLabel, genderViewContainer, dateDescriptionLabel, dateViewContainer, cityDescriptionLabel, cityViewContainer)
-        genderViewContainer.addSubview(genderLabel)
+        genderViewContainer.addSubviews(femaleLabel, maleLabel)
         nameViewContainer.addSubview(nameLabel)
         surnameViewContainer.addSubview(surnameLabel)
         dateViewContainer.addSubview(dateLabel)
@@ -96,6 +102,7 @@ extension ProfileViewController {
         profileImageView.image = UIImage(named: "Debil")
         profileImageView.layer.masksToBounds = true
         profileImageView.layer.cornerRadius = 80
+        profileImageView.loadImage()
 
         configureConstraints()
 
@@ -105,9 +112,10 @@ extension ProfileViewController {
         genderViewContainer.backgroundColor = UIColor(hexString: "ECECEC")
         genderViewContainer.layer.cornerRadius = 10
 
-        genderLabel.text = UserDefaults.standard.string(forKey: "gender")
-        genderLabel.textColor = UIColor(hexString: "676767")
-
+        femaleLabel.text = UserDefaults.standard.string(forKey: "female")
+        femaleLabel.textColor = UIColor(hexString: "000000")
+        maleLabel.text = UserDefaults.standard.string(forKey: "male")
+        maleLabel.textColor = UIColor(hexString: "000000")
 
         nameDescriptionLabel.text = "Имя"
         nameDescriptionLabel.font = .systemFont(ofSize: 14, weight: .regular)
@@ -226,6 +234,18 @@ extension ProfileViewController {
             $0.leading.equalTo(genderDescriptionLabel)
             $0.height.equalTo(40)
             $0.width.equalTo(140)
+        }
+
+        femaleLabel.snp.makeConstraints {
+            $0.leading.equalToSuperview().offset(16)
+            $0.size.equalTo(genderViewContainer)
+            $0.centerY.equalTo(genderViewContainer)
+        }
+
+        maleLabel.snp.makeConstraints {
+            $0.leading.equalToSuperview().offset(16)
+            $0.size.equalTo(genderViewContainer)
+            $0.centerY.equalTo(genderViewContainer)
         }
 
         dateDescriptionLabel.snp.makeConstraints {

@@ -21,10 +21,10 @@ final class EditingProfileViewController: UIViewController {
     private var aboutMeView = UIView()
     private var femaleButton = UIButton()
     private var femaleImageView = UIImageView()
-    private var femaleLabel = UILabel()
+    private var femaleNameLabel = UILabel()
     private var maleButton = UIButton()
     private var maleImageView = UIImageView()
-    private var maleLabel = UILabel()
+    private var maleNameLabel = UILabel()
     private var nameLabel = UILabel()
     private var nameTextField = UITextField()
     private var surnameLabel = UILabel()
@@ -55,7 +55,6 @@ final class EditingProfileViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
 
     }
 
@@ -79,8 +78,8 @@ extension EditingProfileViewController {
         changePhotoView.addSubviews(profileImageView, changePhotoButton)
         aboutMeView.addSubviews(femaleButton, maleButton, nameLabel, nameTextField, surnameLabel, surnameTextField, dateLabel, dateTextField, cityLabel, cityTextField)
 
-        femaleButton.addSubviews(femaleImageView, femaleLabel)
-        maleButton.addSubviews(maleImageView, maleLabel)
+        femaleButton.addSubviews(femaleImageView, femaleNameLabel)
+        maleButton.addSubviews(maleImageView, maleNameLabel)
     }
 
     private func setupSubviews() {
@@ -105,6 +104,7 @@ extension EditingProfileViewController {
         profileImageView.image = UIImage(named: "Debil")
         profileImageView.layer.masksToBounds = true
         profileImageView.layer.cornerRadius = 34
+        profileImageView.saveImage()
 
         // FIXME: - Добавить англ. язык
         changePhotoButton.setTitle("Изменить фото", for: .normal)
@@ -128,26 +128,31 @@ extension EditingProfileViewController {
         femaleButton.layer.cornerRadius = 10
         femaleButton.layer.borderWidth = 1
         femaleButton.layer.borderColor = UIColor(hexString: "FE7B7B")?.cgColor
-        
+        femaleButton.isSelected = UserDefaults.standard.bool(forKey: "female")
+        femaleButton.addTarget(self, action: #selector(femaleButtonDidTap), for: .touchUpInside)
+
 
         femaleImageView.image = UIImage(named: "Woman")
         femaleImageView.contentMode = .center
 
-        femaleLabel.text = "Женщина"
-        femaleLabel.font = .systemFont(ofSize: 14, weight: .regular)
-        femaleLabel.textColor = UIColor(hexString: "FE7B7B")
+        femaleNameLabel.text = "Женщина"
+        femaleNameLabel.font = .systemFont(ofSize: 14, weight: .regular)
+        femaleNameLabel.textColor = UIColor(hexString: "FE7B7B")
 
         maleButton.backgroundColor = UIColor(hexString: "ADF0FF")
         maleButton.layer.cornerRadius = 10
         maleButton.layer.borderWidth = 1
         maleButton.layer.borderColor = UIColor(hexString: "0052FF")?.cgColor
+        maleButton.isSelected = UserDefaults.standard.bool(forKey: "male")
+        maleButton.addTarget(self, action: #selector(maleButtonDidTap), for: .touchUpInside)
+
 
         maleImageView.image = UIImage(named: "Man")
         maleImageView.contentMode = .center
 
-        maleLabel.text = "Мужчина"
-        maleLabel.font = .systemFont(ofSize: 14, weight: .regular)
-        maleLabel.textColor = UIColor(hexString: "0052FF")
+        maleNameLabel.text = "Мужчина"
+        maleNameLabel.font = .systemFont(ofSize: 14, weight: .regular)
+        maleNameLabel.textColor = UIColor(hexString: "0052FF")
 
         configureConstraints()
 
@@ -160,6 +165,7 @@ extension EditingProfileViewController {
         nameTextField.font = .systemFont(ofSize: 16, weight: .regular)
         nameTextField.backgroundColor = UIColor(hexString: "ECECEC")
         nameTextField.layer.cornerRadius = 10
+        
 
         surnameLabel.text = "Фамилия"
         surnameLabel.font = .systemFont(ofSize: 14, weight: .regular)
@@ -207,9 +213,6 @@ extension EditingProfileViewController {
         }
 
         scrollContentView.snp.makeConstraints {
-//            $0.edges.equalToSuperview()
-//            $0.width.equalTo(scrollView)
-//            $0.height.equalTo(scrollView).priority(.low)
             $0.size.equalToSuperview()
 
         }
@@ -263,7 +266,7 @@ extension EditingProfileViewController {
             $0.height.equalTo(56)
         }
 
-        femaleLabel.snp.makeConstraints {
+        femaleNameLabel.snp.makeConstraints {
             $0.leading.equalTo(femaleImageView.snp.trailing).offset(8)
             $0.top.equalToSuperview().offset(11)
             $0.trailing.equalToSuperview().inset(4)
@@ -283,7 +286,7 @@ extension EditingProfileViewController {
             $0.height.equalTo(44)
         }
 
-        maleLabel.snp.makeConstraints {
+        maleNameLabel.snp.makeConstraints {
             $0.leading.equalTo(maleImageView.snp.trailing).offset(14)
             $0.top.equalToSuperview().offset(11)
             $0.trailing.equalToSuperview().inset(4)
@@ -357,10 +360,27 @@ extension EditingProfileViewController {
         UserDefaults.standard.set(surname, forKey: "surname")
         UserDefaults.standard.set(date, forKey: "date")
         UserDefaults.standard.set(city, forKey: "city")
+        profileImageView.saveImage()
     }
 
     @objc private func changePhotoButtonDidTap() {
 
+    }
+
+    @objc private func femaleButtonDidTap() {
+        let female = "Женщина"
+        UserDefaults.standard.removeObject(forKey: "male")
+        UserDefaults.standard.set(female, forKey: "female")
+
+        print("femalebutton☢️")
+    }
+
+    @objc private func maleButtonDidTap() {
+        let male = "Мужчина"
+        UserDefaults.standard.removeObject(forKey: "female")
+        UserDefaults.standard.set(male, forKey: "male")
+
+        print("malebutton☢️")
     }
 
     @objc private func handleDatePicker(_ datePicker: UIDatePicker) {
@@ -385,4 +405,18 @@ extension EditingProfileViewController: UIImagePickerControllerDelegate, UINavig
         picker.dismiss(animated: true, completion: nil)
     }
 
+}
+
+extension UIImageView {
+    func saveImage(){
+    guard let image = self.image, let data = image.jpegData (compressionQuality: 0.5) else { return }
+      let encoded = try! PropertyListEncoder ().encode (data)
+      UserDefaults.standard.set(encoded, forKey: "image")
+    }
+    func loadImage() {
+        guard let data = UserDefaults.standard.data(forKey: "image") else { return }
+        let decoded = try! PropertyListDecoder().decode(Data.self, from: data)
+        let image = UIImage(data: decoded)
+        self.image = image
+    }
 }
