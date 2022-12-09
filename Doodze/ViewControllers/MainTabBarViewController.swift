@@ -14,12 +14,12 @@ class MainTabBarViewController: UITabBarController {
         view.backgroundColor = .white
 
         let vc1 = UINavigationController(rootViewController: HabitsViewController())
-        let vc2 = UINavigationController(rootViewController: ProfileViewController())
-        let vc3 = UINavigationController(rootViewController: EditingProfileViewController())
+        let vc2 = UINavigationController(rootViewController: MotivationViewController())
+        let vc3 = UINavigationController(rootViewController: ProfileViewController())
 
         vc1.tabBarItem.image = UIImage(systemName: "clock.arrow.2.circlepath")
-        vc2.tabBarItem.image = UIImage(systemName: "person.crop.circle")
-        vc3.tabBarItem.image = UIImage(systemName: "pencil.circle")
+        vc2.tabBarItem.image = UIImage(systemName: "pencil.circle")
+        vc3.tabBarItem.image = UIImage(systemName: "person.crop.circle")
 
         tabBar.tintColor = .black
         tabBar.isTranslucent = false

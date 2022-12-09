@@ -62,6 +62,7 @@ extension SetupAlcoholViewController {
 
     private func setupSubviews() {
         addSubviews()
+        hideKeyboardWhenTappedAround() 
 
         view.backgroundColor = UIColor(hexString: "EDEDED")
 

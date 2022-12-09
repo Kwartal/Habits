@@ -137,10 +137,6 @@ extension SelectHabitViewController: UITableViewDataSource, UITableViewDelegate 
             let vc = UINavigationController(rootViewController: SetupWatchingTvViewController())
             present(vc, animated: true)
         }
-
-
-
-
     }
 }
 

@@ -1,16 +1,16 @@
 //
-//  HabitsViewController.swift
+//  MotivationViewController.swift
 //  Doodze
 //
-//  Created by Богдан Баринов on 01.11.2022.
+//  Created by Богдан Баринов on 07.12.2022.
 //
 
 import UIKit
 import CoreData
 
-final class HabitsViewController: UIViewController {
+final class MotivationViewController: UIViewController {
 
-    private var savedHabits = [Habit]()
+    private var advantages = [Habit]()
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private var context: NSManagedObjectContext!
 
@@ -54,7 +54,7 @@ final class HabitsViewController: UIViewController {
 
 // MARK: - Layout
 
-extension HabitsViewController {
+extension MotivationViewController {
 
     private func addSubviews() {
         view.addSubviews(tableView)
@@ -76,39 +76,39 @@ extension HabitsViewController {
 
     private func configureNavigation() {
         // FIXME: - Локализация
-        navigationItem.title = "Добавьте вредную привычку"
+        navigationItem.title = "Добавьте Плюсы"
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(resetAllRecords))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBadHabbit))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewAdvantages))
     }
 }
 
-extension HabitsViewController: UITableViewDataSource, UITableViewDelegate {
+extension MotivationViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return savedHabits.count
+        return advantages.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: HabitTableViewCell.reuseId, for: indexPath) as? HabitTableViewCell else { return UITableViewCell() }
-        cell.configure(badHabbit: savedHabits[indexPath.row], color: Colors.color(by: indexPath.row))
+        cell.configure(badHabbit: advantages[indexPath.row], color: Colors.color(by: indexPath.row))
         return cell
     }
 
 }
 
-extension HabitsViewController {
+extension MotivationViewController {
 
-    @objc private func addBadHabbit() {
-        let vc = SelectHabitViewController()
-        navigationController?.pushViewController(vc, animated: false)
+    @objc private func addNewAdvantages() {
+        let vc = AddAdvantagesViewController()
+        present(vc, animated: true)
     }
 
 }
 
-extension HabitsViewController {
+extension MotivationViewController {
 
     func fetchData() {
-        savedHabits = []
+        advantages = []
         context = appDelegate.persistentContainer.viewContext
         print("Fetching Data..")
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "HabitEntity")
@@ -121,7 +121,7 @@ extension HabitsViewController {
                 let descr = data.value(forKey: "descr") as? String ?? ""
                 print("User Name is : "+name+" and Age is : "+imageName+" and "+descr)
                 let model = Habit(name: name, imageName: imageName, description: descr)
-                savedHabits.append(model)
+                advantages.append(model)
                 tableView.reloadData()
             }
         } catch {

@@ -311,6 +311,9 @@ extension ProfileViewController {
 
     @objc private func editButtonDidTap() {
         print("🟢Кнопка Редактировать")
+        let vc = EditingProfileViewController()
+        navigationController?.pushViewController(vc, animated: true)
+
     }
 
     @objc private func handleDatePicker(_ datePicker: UIDatePicker) {

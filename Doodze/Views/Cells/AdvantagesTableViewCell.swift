@@ -1,17 +1,16 @@
 //
-//  HabitTableViewCell.swift
+//  AdvantagesTableViewCell.swift
 //  Doodze
 //
-//  Created by Богдан Баринов on 02.11.2022.
+//  Created by Богдан Баринов on 07.12.2022.
 //
 
 import UIKit
 import SnapKit
 
-final class HabitTableViewCell: UITableViewCell, ClassIdentifiable {
+final class AdvantagesTableViewCell: UITableViewCell, ClassIdentifiable {
     // MARK: - UI Elements
 
-    private var badHabitImageView = UIImageView()
     private var nameLabel = UILabel()
     private var badHabitDiscriptionLabel = UILabel()
     private var backingView = UIView()
@@ -39,7 +38,6 @@ final class HabitTableViewCell: UITableViewCell, ClassIdentifiable {
     public func configure(badHabbit: Habit, color: UIColor) {
         backingView.backgroundColor = color
 
-        badHabitImageView.image = UIImage(named: badHabbit.imageName)
         nameLabel.text = badHabbit.name
         badHabitDiscriptionLabel.text = badHabbit.description
     }
@@ -47,17 +45,13 @@ final class HabitTableViewCell: UITableViewCell, ClassIdentifiable {
 
 // MARK: - Layout
 
-extension HabitTableViewCell {
+extension AdvantagesTableViewCell {
     private func setupSubviews() {
-        contentView.addSubviews(backingView, badHabitImageView, nameLabel, badHabitDiscriptionLabel)
+        contentView.addSubviews(backingView, nameLabel, badHabitDiscriptionLabel)
 
         contentView.layer.cornerRadius = 25
         backgroundColor = .clear
 
-        badHabitImageView.layer.cornerRadius = 25
-        badHabitImageView.clipsToBounds = false
-        badHabitImageView.contentMode = .scaleAspectFill
-        
         nameLabel.font = .systemFont(ofSize: 24, weight: .semibold)
         nameLabel.textAlignment = .left
         nameLabel.textDropShadow()
@@ -72,11 +66,6 @@ extension HabitTableViewCell {
     }
 
     private func configureConstraints() {
-        badHabitImageView.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.leading.equalToSuperview().offset(32)
-            $0.width.greaterThanOrEqualTo(120)
-        }
 
         nameLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(170)
@@ -96,5 +85,5 @@ extension HabitTableViewCell {
             $0.leading.trailing.bottom.equalToSuperview()
         }
     }
-    
+
 }

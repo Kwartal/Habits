@@ -26,14 +26,18 @@ final class EditingProfileViewController: UIViewController {
     private var maleImageView = UIImageView()
     private var maleNameLabel = UILabel()
     private var nameLabel = UILabel()
+    private var nameTextContainerView = UIView()
     private var nameTextField = UITextField()
     private var surnameLabel = UILabel()
+    private var surnameTextContainerView = UIView()
     private var surnameTextField = UITextField()
     private var dateLabel = UILabel()
     private var dateTextField = UITextField()
     private var datePicker = UIDatePicker()
     private var cityLabel = UILabel()
+    private var cityTextContainerView = UIView()
     private var cityTextField = UITextField()
+    private var saveSettingsButton = UIButton()
 
 
     // MARK: - Lifecycle
@@ -74,9 +78,12 @@ extension EditingProfileViewController {
     private func addSubviews() {
         view.addSubviews(scrollView)
         scrollView.addSubviews(scrollContentView)
-        scrollContentView.addSubviews(changePhotoView, aboutMeLabel, descriptionLabel, aboutMeView)
+        scrollContentView.addSubviews(changePhotoView, aboutMeLabel, descriptionLabel, aboutMeView, saveSettingsButton)
         changePhotoView.addSubviews(profileImageView, changePhotoButton)
-        aboutMeView.addSubviews(femaleButton, maleButton, nameLabel, nameTextField, surnameLabel, surnameTextField, dateLabel, dateTextField, cityLabel, cityTextField)
+        aboutMeView.addSubviews(femaleButton, maleButton, nameLabel, nameTextContainerView, surnameLabel, surnameTextContainerView, dateLabel, dateTextField, cityLabel, cityTextContainerView)
+        nameTextContainerView.addSubview(nameTextField)
+        surnameTextContainerView.addSubview(surnameTextField)
+        cityTextContainerView.addSubview(cityTextField)
 
         femaleButton.addSubviews(femaleImageView, femaleNameLabel)
         maleButton.addSubviews(maleImageView, maleNameLabel)
@@ -84,11 +91,10 @@ extension EditingProfileViewController {
 
     private func setupSubviews() {
         addSubviews()
+        hideKeyboardWhenTappedAround()
         // FIXME: - Добавить англ. язык
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .done, target: self, action: #selector(saveButtonDidTap))
-
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Отменить", style: .done, target: self, action: #selector(changeButtonDidTap))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Отменить", style: .done, target: self, action: #selector(cancelButtonDidTap))
         navigationItem.leftBarButtonItem?.tintColor = UIColor(hexString: "181818")
 
         navigationItem.rightBarButtonItem?.tintColor = UIColor(hexString: "181818")
@@ -160,16 +166,21 @@ extension EditingProfileViewController {
         nameLabel.font = .systemFont(ofSize: 14, weight: .regular)
         nameLabel.textColor = UIColor(hexString: "878787")
 
+        nameTextContainerView.layer.cornerRadius = 10
+        nameTextContainerView.backgroundColor = UIColor(hexString: "ECECEC")
+
         nameTextField.text = UserDefaults.standard.string(forKey: "name")
         nameTextField.textColor = UIColor(hexString: "181818")
         nameTextField.font = .systemFont(ofSize: 16, weight: .regular)
         nameTextField.backgroundColor = UIColor(hexString: "ECECEC")
         nameTextField.layer.cornerRadius = 10
-        
 
         surnameLabel.text = "Фамилия"
         surnameLabel.font = .systemFont(ofSize: 14, weight: .regular)
         surnameLabel.textColor = UIColor(hexString: "878787")
+
+        surnameTextContainerView.layer.cornerRadius = 10
+        surnameTextContainerView.backgroundColor = UIColor(hexString: "ECECEC")
 
         surnameTextField.text = UserDefaults.standard.string(forKey: "surname")
         surnameTextField.textColor = UIColor(hexString: "181818")
@@ -199,11 +210,19 @@ extension EditingProfileViewController {
         cityLabel.font = .systemFont(ofSize: 14, weight: .regular)
         cityLabel.textColor = UIColor(hexString: "878787")
 
+        cityTextContainerView.layer.cornerRadius = 10
+        cityTextContainerView.backgroundColor = UIColor(hexString: "ECECEC")
+
         cityTextField.text = UserDefaults.standard.string(forKey: "city")
         cityTextField.textColor = UIColor(hexString: "181818")
         cityTextField.font = .systemFont(ofSize: 16, weight: .regular)
         cityTextField.backgroundColor = UIColor(hexString: "ECECEC")
         cityTextField.layer.cornerRadius = 10
+
+        saveSettingsButton.addTarget(self, action: #selector(saveSettingsButtonDidTap), for: .touchUpInside)
+        saveSettingsButton.backgroundColor = UIColor(hexString: "0090F7")
+        saveSettingsButton.layer.cornerRadius = 10
+        saveSettingsButton.setTitle("Сохранить", for: .normal)
     }
 
     private func configureConstraints() {
@@ -297,28 +316,37 @@ extension EditingProfileViewController {
             $0.leading.equalToSuperview().offset(15)
         }
 
-        nameTextField.snp.makeConstraints {
+        nameTextContainerView.snp.makeConstraints {
             $0.top.equalTo(nameLabel.snp.bottom).offset(3)
             $0.leading.trailing.equalToSuperview().inset(15)
             $0.height.equalTo(48)
             $0.width.equalTo(305)
         }
 
+        nameTextField.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview().inset(12)
+            $0.centerY.equalTo(nameTextContainerView)
+        }
+
         surnameLabel.snp.makeConstraints {
-            $0.top.equalTo(nameTextField.snp.bottom).offset(20)
+            $0.top.equalTo(nameTextContainerView.snp.bottom).offset(20)
             $0.leading.equalToSuperview().offset(15)
         }
 
-        surnameTextField.snp.makeConstraints {
+        surnameTextContainerView.snp.makeConstraints {
             $0.top.equalTo(surnameLabel.snp.bottom).offset(3)
             $0.leading.trailing.equalToSuperview().inset(15)
             $0.height.equalTo(48)
             $0.width.equalTo(305)
         }
 
+        surnameTextField.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview().inset(12)
+            $0.centerY.equalTo(surnameTextContainerView)
+        }
 
         dateLabel.snp.makeConstraints {
-            $0.top.equalTo(surnameTextField.snp.bottom).offset(20)
+            $0.top.equalTo(surnameTextContainerView.snp.bottom).offset(20)
             $0.leading.equalToSuperview().offset(15)
         }
 
@@ -334,11 +362,23 @@ extension EditingProfileViewController {
             $0.leading.equalToSuperview().offset(15)
         }
 
-        cityTextField.snp.makeConstraints {
+        cityTextContainerView.snp.makeConstraints {
             $0.top.equalTo(cityLabel.snp.bottom).offset(3)
             $0.leading.trailing.equalToSuperview().inset(15)
             $0.height.equalTo(48)
             $0.width.equalTo(305)
+        }
+
+        cityTextField.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview().inset(12)
+            $0.centerY.equalTo(cityTextContainerView)
+        }
+
+        saveSettingsButton.snp.makeConstraints {
+            $0.top.equalTo(cityTextContainerView.snp.bottom).offset(60)
+            $0.width.equalTo(335)
+            $0.height.equalTo(48)
+            $0.leading.trailing.equalToSuperview().inset(20)
         }
 
     }
@@ -346,11 +386,12 @@ extension EditingProfileViewController {
 
 extension EditingProfileViewController {
 
-    @objc private func changeButtonDidTap() {
+    @objc private func cancelButtonDidTap() {
+        navigationController?.popViewController(animated: true)
 
     }
 
-    @objc private func saveButtonDidTap() {
+    @objc private func saveSettingsButtonDidTap() {
         let name = nameTextField.text
         let surname = surnameTextField.text
         let date = dateTextField.text
@@ -361,10 +402,8 @@ extension EditingProfileViewController {
         UserDefaults.standard.set(date, forKey: "date")
         UserDefaults.standard.set(city, forKey: "city")
         profileImageView.saveImage()
-    }
 
-    @objc private func changePhotoButtonDidTap() {
-
+        navigationController?.popViewController(animated: true)
     }
 
     @objc private func femaleButtonDidTap() {
@@ -388,6 +427,10 @@ extension EditingProfileViewController {
         if let day = components.day, let month = components.month, let year = components.year {
             dateTextField.text = "\(day).\(month).\(year)"
         }
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+         self.view.endEditing(true)
     }
 }
 
