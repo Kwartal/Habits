@@ -41,8 +41,6 @@ final class AddAdvantagesViewController: UIViewController {
         self.dismiss(animated: true, completion: {
             let vc = MotivationViewController()
 
-            // 'self' refers to FirstController, but you have just dismissed
-            //  FirstController! It's no longer in the view hierarchy!
             self.present(vc, animated: true, completion: nil)
         })
     }
@@ -60,9 +58,10 @@ extension AddAdvantagesViewController {
     private func setupSubviews() {
         addSubviews()
 
-        testButton.backgroundColor = .blue
-        testButton.setTitle("TEST", for: .normal)
         testButton.addTarget(self, action: #selector(testButtonDIDTAP), for: .touchUpInside)
+        testButton.backgroundColor = UIColor(hexString: "0090F7")
+        testButton.layer.cornerRadius = 10
+        testButton.setTitle("Сохранить", for: .normal)
 
 
         configureConstraints()

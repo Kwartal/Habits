@@ -105,7 +105,6 @@ extension SelectHabitViewController: UITableViewDataSource, UITableViewDelegate 
         let entity = NSEntityDescription.entity(forEntityName: "HabitEntity", in: context)
         let newHabit = NSManagedObject(entity: entity!, insertInto: context)
         saveData(UserDBObj: newHabit, habit: habit)
-        //        navigationController?.popViewController(animated: false)
         if habit.name == "Сигареты" {
             let vc = UINavigationController(rootViewController: SetupCigaretteViewController())
             present(vc, animated: false)

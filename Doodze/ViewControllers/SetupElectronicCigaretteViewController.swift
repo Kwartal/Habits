@@ -45,8 +45,11 @@ final class SetupElectronicCigaretteViewController: UIViewController, UITextFiel
     // MARK: - Actions
 
     @objc private func backButtonPressed() {
-        let vc = MainTabBarViewController()
-        present(vc, animated: false)
+        self.dismiss(animated: true, completion: {
+            let vc = MainTabBarViewController()
+
+            self.present(vc, animated: true, completion: nil)
+        })
     }
 }
 

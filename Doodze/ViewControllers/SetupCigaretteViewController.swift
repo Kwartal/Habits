@@ -198,8 +198,11 @@ extension SetupCigaretteViewController {
     }
 
     @objc private func backButtonPressed() {
-        let vc = MainTabBarViewController()
-        present(vc, animated: false)
+        self.dismiss(animated: true, completion: {
+            let vc = MainTabBarViewController()
+
+            self.present(vc, animated: true, completion: nil)
+        })
     }
 
     @objc private func doneSettingsDidTap() {
@@ -225,6 +228,10 @@ extension SetupCigaretteViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         //For mobile numer validation
         if textField == packPriceTextField {
+            let allowedCharacters = CharacterSet(charactersIn:".0123456789")//Here change this characters based on your requirement
+            let characterSet = CharacterSet(charactersIn: string)
+            return allowedCharacters.isSuperset(of: characterSet)
+        } else if textField == cigarettePerDayTextField {
             let allowedCharacters = CharacterSet(charactersIn:".0123456789")//Here change this characters based on your requirement
             let characterSet = CharacterSet(charactersIn: string)
             return allowedCharacters.isSuperset(of: characterSet)
