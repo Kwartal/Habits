@@ -38,6 +38,11 @@
 		71AC1C8A2919B0BF00220D31 /* NewBadHabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC1C892919B0BF00220D31 /* NewBadHabitTableViewCell.swift */; };
 		71BA7F38291DBA2600D3A0A1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BA7F37291DBA2600D3A0A1 /* R.generated.swift */; };
 		71BA7F3A291DCA1200D3A0A1 /* UILabel + TextShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BA7F39291DCA1200D3A0A1 /* UILabel + TextShadow.swift */; };
+		71D7788B29AE46A300D94D93 /* DogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D7788A29AE46A300D94D93 /* DogsViewController.swift */; };
+		71D7788D29AF95A700D94D93 /* DogOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D7788C29AF95A700D94D93 /* DogOneViewController.swift */; };
+		71D7788F29AF95B000D94D93 /* DogTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D7788E29AF95B000D94D93 /* DogTwoViewController.swift */; };
+		71D7789129AF95BB00D94D93 /* DogThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D7789029AF95BB00D94D93 /* DogThreeViewController.swift */; };
+		71D7789329AFC74D00D94D93 /* DogsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D7789229AFC74D00D94D93 /* DogsTableViewCell.swift */; };
 		71E7AFBB2911BA14006A9FAC /* UIColor + Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7AFBA2911BA14006A9FAC /* UIColor + Hex.swift */; };
 		71E7AFBD2911BAB0006A9FAC /* UIColor + Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7AFBC2911BAB0006A9FAC /* UIColor + Colors.swift */; };
 		71E7AFBF2911BAD3006A9FAC /* UIColor + Creator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7AFBE2911BAD3006A9FAC /* UIColor + Creator.swift */; };
@@ -87,6 +92,11 @@
 		71AC1C892919B0BF00220D31 /* NewBadHabitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBadHabitTableViewCell.swift; sourceTree = "<group>"; };
 		71BA7F37291DBA2600D3A0A1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		71BA7F39291DCA1200D3A0A1 /* UILabel + TextShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + TextShadow.swift"; sourceTree = "<group>"; };
+		71D7788A29AE46A300D94D93 /* DogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsViewController.swift; sourceTree = "<group>"; };
+		71D7788C29AF95A700D94D93 /* DogOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogOneViewController.swift; sourceTree = "<group>"; };
+		71D7788E29AF95B000D94D93 /* DogTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogTwoViewController.swift; sourceTree = "<group>"; };
+		71D7789029AF95BB00D94D93 /* DogThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogThreeViewController.swift; sourceTree = "<group>"; };
+		71D7789229AFC74D00D94D93 /* DogsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsTableViewCell.swift; sourceTree = "<group>"; };
 		71E7AFBA2911BA14006A9FAC /* UIColor + Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Hex.swift"; sourceTree = "<group>"; };
 		71E7AFBC2911BAB0006A9FAC /* UIColor + Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Colors.swift"; sourceTree = "<group>"; };
 		71E7AFBE2911BAD3006A9FAC /* UIColor + Creator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Creator.swift"; sourceTree = "<group>"; };
@@ -201,6 +211,11 @@
 			isa = PBXGroup;
 			children = (
 				71F312D729118FA50032E880 /* MainTabBarViewController.swift */,
+				71D7788A29AE46A300D94D93 /* DogsViewController.swift */,
+				71D7789229AFC74D00D94D93 /* DogsTableViewCell.swift */,
+				71D7788C29AF95A700D94D93 /* DogOneViewController.swift */,
+				71D7788E29AF95B000D94D93 /* DogTwoViewController.swift */,
+				71D7789029AF95BB00D94D93 /* DogThreeViewController.swift */,
 				717E785B2911A98700F6155B /* HabitsViewController.swift */,
 				71AC1C8729199F2C00220D31 /* SelectHabitViewController.swift */,
 				716F38262940BF40002A2C5B /* MotivationViewController.swift */,
@@ -406,7 +421,9 @@
 				717E785C2911A98700F6155B /* HabitsViewController.swift in Sources */,
 				719CECAF2939FDF500C2BA5E /* SetupElectronicCigaretteViewController.swift in Sources */,
 				719CECB1293A008700C2BA5E /* SetupSocialMediaViewController.swift in Sources */,
+				71D7788B29AE46A300D94D93 /* DogsViewController.swift in Sources */,
 				719CECAD29391CBC00C2BA5E /* SetupAlcoholViewController.swift in Sources */,
+				71D7788D29AF95A700D94D93 /* DogOneViewController.swift in Sources */,
 				719CECBB293A0EEF00C2BA5E /* SetupVideoGamesViewController.swift in Sources */,
 				71638A082943222B0036D145 /* UIViewcontroller + DismissKeyboard.swift in Sources */,
 				711C1A01291DB4B8002A6BBD /* LayerStyle.swift in Sources */,
@@ -415,6 +432,7 @@
 				71E7AFBD2911BAB0006A9FAC /* UIColor + Colors.swift in Sources */,
 				71128C78291B103100E0A70E /* HabitModel.xcdatamodeld in Sources */,
 				71443621293DEB9F006C99C5 /* EditingProfileViewController.swift in Sources */,
+				71D7789329AFC74D00D94D93 /* DogsTableViewCell.swift in Sources */,
 				711C1A05291DB677002A6BBD /* GlobalVariables.swift in Sources */,
 				71E7AFC72911C1B5006A9FAC /* ClassIdentifiable.swift in Sources */,
 				716F38272940BF40002A2C5B /* MotivationViewController.swift in Sources */,
@@ -435,10 +453,12 @@
 				71F312D429118FA50032E880 /* AppDelegate.swift in Sources */,
 				719CECB7293A0E5F00C2BA5E /* SetupMarijuanaViewController.swift in Sources */,
 				71E7AFBF2911BAD3006A9FAC /* UIColor + Creator.swift in Sources */,
+				71D7789129AF95BB00D94D93 /* DogThreeViewController.swift in Sources */,
 				71BA7F38291DBA2600D3A0A1 /* R.generated.swift in Sources */,
 				71E7AFC12911BF0D006A9FAC /* Mock.swift in Sources */,
 				71F312D629118FA50032E880 /* SceneDelegate.swift in Sources */,
 				717E78602911AAE000F6155B /* ProfileViewController.swift in Sources */,
+				71D7788F29AF95B000D94D93 /* DogTwoViewController.swift in Sources */,
 				71AC1C8A2919B0BF00220D31 /* NewBadHabitTableViewCell.swift in Sources */,
 				71A54271291351AD00337658 /* Date.swift in Sources */,
 				71A5426F2913001100337658 /* ScrollView.swift in Sources */,

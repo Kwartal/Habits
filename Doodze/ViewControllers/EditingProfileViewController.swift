@@ -451,6 +451,7 @@ extension EditingProfileViewController: UIImagePickerControllerDelegate, UINavig
 }
 
 extension UIImageView {
+
     func saveImage(){
     guard let image = self.image, let data = image.jpegData (compressionQuality: 0.5) else { return }
       let encoded = try! PropertyListEncoder ().encode (data)
@@ -462,4 +463,5 @@ extension UIImageView {
         let image = UIImage(data: decoded)
         self.image = image
     }
+    
 }
