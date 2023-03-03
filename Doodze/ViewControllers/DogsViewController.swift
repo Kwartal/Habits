@@ -15,13 +15,15 @@ class DogsViewController: UIViewController {
     func createMockData() {
         for _ in 1...5 {
             let randomTimeInterval = TimeInterval(Int.random(in: 0...Int(Date().timeIntervalSince1970)))
-
-            // Create a random date using the time interval
             let randomDate = Date(timeIntervalSince1970: randomTimeInterval)
             mockData.append(randomDate)
         }
 
     }
+    var arrayInt: [Int] = [1, 2, 3, 4, 5]
+    var arrayString: [String] = ["ds", "dsa"]
+    var imageMockData = [UIImage(named: "Coffee") ?? UIImage(), UIImage(named: "Sweets") ?? UIImage(), UIImage(named: "Gamepad") ?? UIImage()]
+
     // MARK: - UI Elements
 
     private var titleLabel = UILabel()
@@ -29,7 +31,6 @@ class DogsViewController: UIViewController {
     private var myMeetingsSwitch = UISwitch()
     private var segmentedControl = UISegmentedControl(items: ["Все", "Следующие", "Прошедшие"])
     private let tableView = UITableView(frame: .zero, style: .plain)
-
 
     // MARK: - Lifecycle
 
@@ -133,6 +134,7 @@ extension DogsViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(cellType: DogsTableViewCell.self)
+        tableView.backgroundColor = .brown.withAlphaComponent(0.1)
     }
 
     func convertDate(date: Date) -> String {
@@ -166,7 +168,7 @@ extension DogsViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: DogsTableViewCell = tableView.dequeueReusableCell()
-        cell.configure(with: convertDate(date: mockData[indexPath.row]))
+        cell.configure(with: convertDate(date: mockData[indexPath.row]), and: imageMockData)
         return cell
     }
 
