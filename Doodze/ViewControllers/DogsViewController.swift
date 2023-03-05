@@ -68,7 +68,7 @@ private extension DogsViewController {
     func setupSubviews() {
         addSubviews()
 
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(hexString: "FFFBF7")
         navigationController?.setNavigationBarHidden(true, animated: false)
 
         configureTitleLabel()
@@ -127,14 +127,14 @@ extension DogsViewController {
 
     func configureSegmentedControl() {
         segmentedControl.selectedSegmentIndex = 0
-        segmentedControl.tintColor = .red
     }
 
     func configureTableView() {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(cellType: DogsTableViewCell.self)
-        tableView.backgroundColor = .brown.withAlphaComponent(0.1)
+        tableView.backgroundColor = UIColor(hexString: "FFFBF7")
+        tableView.separatorStyle = .none
     }
 
     func convertDate(date: Date) -> String {
@@ -168,7 +168,7 @@ extension DogsViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: DogsTableViewCell = tableView.dequeueReusableCell()
-        cell.configure(with: convertDate(date: mockData[indexPath.row]), and: imageMockData)
+        cell.configure(with: convertDate(date: mockData[indexPath.row]))
         return cell
     }
 
