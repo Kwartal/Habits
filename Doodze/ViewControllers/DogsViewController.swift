@@ -10,7 +10,9 @@ import SnapKit
 
 
 class DogsViewController: UIViewController {
+
 // FIXME: мокдата
+
     var mockData: [Date] = []
     func createMockData() {
         for _ in 1...5 {
@@ -18,18 +20,14 @@ class DogsViewController: UIViewController {
             let randomDate = Date(timeIntervalSince1970: randomTimeInterval)
             mockData.append(randomDate)
         }
-
     }
-    var arrayInt: [Int] = [1, 2, 3, 4, 5]
-    var arrayString: [String] = ["ds", "dsa"]
-    var imageMockData = [UIImage(named: "Coffee") ?? UIImage(), UIImage(named: "Sweets") ?? UIImage(), UIImage(named: "Gamepad") ?? UIImage()]
 
     // MARK: - UI Elements
 
     private var titleLabel = UILabel()
     private var myMeetingsLabel = UILabel()
     private var myMeetingsSwitch = UISwitch()
-    private var segmentedControl = UISegmentedControl(items: ["Все", "Следующие", "Прошедшие"])
+    private var segmentedControl = CustomSegmentedControl()
     private let tableView = UITableView(frame: .zero, style: .plain)
 
     // MARK: - Lifecycle
@@ -98,6 +96,7 @@ private extension DogsViewController {
         segmentedControl.snp.makeConstraints {
             $0.top.equalTo(myMeetingsLabel.snp.bottom).offset(32)
             $0.leading.equalToSuperview().offset(16)
+            $0.height.equalTo(50)
         }
 
         tableView.snp.makeConstraints {
@@ -109,7 +108,7 @@ private extension DogsViewController {
 
 // MARK: - Configure UI
 
-extension DogsViewController {
+private extension DogsViewController {
 
     func configureTitleLabel() {
         titleLabel.text = "Встречи"
@@ -126,7 +125,7 @@ extension DogsViewController {
     }
 
     func configureSegmentedControl() {
-        segmentedControl.selectedSegmentIndex = 0
+        
     }
 
     func configureTableView() {
@@ -155,7 +154,6 @@ extension DogsViewController {
         return (test.capitalized + "\n" + dateStringDay)
     }
 
-    
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource

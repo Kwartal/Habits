@@ -18,9 +18,10 @@ final class CustomSegmentedControl: UIView {
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.addTarget(self, action: #selector(selectSegment), for: .valueChanged)
 
-        segmentedControl.backgroundColor = .clear
-        segmentedControl.selectedSegmentTintColor = .clear
-        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.orange], for: UIControl.State.selected)
+        segmentedControl.subviews.forEach { subview in
+        subview.backgroundColor = .systemBackground }
+        segmentedControl.selectedSegmentTintColor = .systemBackground
+        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: UIControl.State.selected)
         segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.gray], for: UIControl.State.normal)
 
         return segmentedControl
@@ -53,6 +54,7 @@ private extension CustomSegmentedControl {
     func setupView() {
         addSubviews(segmentedControl, segmentedIndicate)
         backgroundColor = .clear
+
         setupLayout()
     }
 }

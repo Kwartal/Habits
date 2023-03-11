@@ -16,7 +16,7 @@ class MainTabBarViewController: UITabBarController {
         let vc1 = UINavigationController(rootViewController: HabitsViewController())
         let vc2 = UINavigationController(rootViewController: MotivationViewController())
         let vc3 = UINavigationController(rootViewController: ProfileViewController())
-        let vc4 = UINavigationController(rootViewController: DogsViewController())
+        let vc4 = MainNavigationController(rootViewController: DogsViewController())
 
         vc1.tabBarItem.image = UIImage(systemName: "clock.arrow.2.circlepath")
         vc2.tabBarItem.image = UIImage(systemName: "pencil.circle")

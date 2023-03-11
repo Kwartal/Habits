@@ -60,43 +60,12 @@ private extension DogsTableViewCell {
         containerView.backgroundColor = .white
         containerView.layer.cornerRadius = 10
 
-        timeLabel.text = "14:00"
-        timeLabel.textColor = .gray
-        timeLabel.font = .systemFont(ofSize: 14, weight: .semibold)
-
-        goalMeetingLabel.text = "Знакомим собачек :)"
-        goalMeetingLabel.font = .systemFont(ofSize: 16, weight: .semibold)
-        goalMeetingLabel.textColor = .black
-
-        locationMeetingLabel.text = "Площадка на Маяковской"
-        locationMeetingLabel.font = .systemFont(ofSize: 16, weight: .regular)
-        locationMeetingLabel.textColor = .gray
-
-        firstImageView.image = UIImage(named: "a")
-        firstImageView.layer.cornerRadius = 20
-        firstImageView.layer.masksToBounds = true
-
-        secondImageView.image = UIImage(named: "b")
-        secondImageView.layer.cornerRadius = 20
-        secondImageView.layer.masksToBounds = true
-
-        thirdImageView.image = UIImage(named: "c")
-        thirdImageView.layer.cornerRadius = 20
-        thirdImageView.layer.masksToBounds = true
-
-        counterPeopleButton.layer.cornerRadius = 20
-        counterPeopleButton.layer.masksToBounds = true
-        counterPeopleButton.backgroundColor = .white
-        counterPeopleButton.layer.borderColor = UIColor.gray.cgColor
-        counterPeopleButton.layer.borderWidth = 1
-
-        counterPeopleLabel.text = "+8"
-        counterPeopleLabel.font = .systemFont(ofSize: 16, weight: .regular)
-
-        confirmTheMeetingButton.backgroundColor = UIColor(hexString: "DB7456")
-//        confirmTheMeetingButton.layer.masksToBounds = true
-        confirmTheMeetingButton.layer.cornerRadius = 20
-        confirmTheMeetingButton.setTitle("Приду", for: .normal)
+        configureTimeLabel()
+        configureMeetingLabel()
+        congifureLocationMeetingLabel()
+        configureUsersImage()
+        congigureCounterLabel()
+        ConfigureConfirmTheMeetingButton()
 
         configureConstraints()
 
@@ -168,6 +137,62 @@ private extension DogsTableViewCell {
             $0.trailing.equalToSuperview().inset(16)
             $0.bottom.equalToSuperview().inset(8)
         }
+    }
+
+}
+
+// MARK: - Configure UI
+
+private extension DogsTableViewCell {
+
+    func configureTimeLabel() {
+        timeLabel.text = "14:00"
+        timeLabel.textColor = .gray
+        timeLabel.font = .systemFont(ofSize: 14, weight: .semibold)
+    }
+
+    func configureMeetingLabel() {
+        goalMeetingLabel.text = "Знакомим собачек :)"
+        goalMeetingLabel.font = .systemFont(ofSize: 16, weight: .semibold)
+        goalMeetingLabel.textColor = .black
+    }
+
+    func congifureLocationMeetingLabel() {
+        locationMeetingLabel.text = "Площадка на Маяковской"
+        locationMeetingLabel.font = .systemFont(ofSize: 16, weight: .regular)
+        locationMeetingLabel.textColor = .gray
+    }
+
+    func configureUsersImage() {
+        firstImageView.image = UIImage(named: "a")
+        firstImageView.layer.cornerRadius = 20
+        firstImageView.layer.masksToBounds = true
+
+        secondImageView.image = UIImage(named: "b")
+        secondImageView.layer.cornerRadius = 20
+        secondImageView.layer.masksToBounds = true
+
+        thirdImageView.image = UIImage(named: "c")
+        thirdImageView.layer.cornerRadius = 20
+        thirdImageView.layer.masksToBounds = true
+    }
+
+    func congigureCounterLabel() {
+        counterPeopleButton.layer.cornerRadius = 20
+        counterPeopleButton.layer.masksToBounds = true
+        counterPeopleButton.backgroundColor = .white
+        counterPeopleButton.layer.borderColor = UIColor.gray.cgColor
+        counterPeopleButton.layer.borderWidth = 1
+
+        counterPeopleLabel.text = "+8"
+        counterPeopleLabel.font = .systemFont(ofSize: 16, weight: .regular)
+
+    }
+
+    func ConfigureConfirmTheMeetingButton() {
+        confirmTheMeetingButton.backgroundColor = UIColor(hexString: "DB7456")
+        confirmTheMeetingButton.layer.cornerRadius = 20
+        confirmTheMeetingButton.setTitle("Приду", for: .normal)
     }
 
 }

@@ -14,6 +14,8 @@
 		711C1A01291DB4B8002A6BBD /* LayerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711C1A00291DB4B8002A6BBD /* LayerStyle.swift */; };
 		711C1A03291DB5EB002A6BBD /* UIColor + App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711C1A02291DB5EB002A6BBD /* UIColor + App.swift */; };
 		711C1A05291DB677002A6BBD /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711C1A04291DB677002A6BBD /* GlobalVariables.swift */; };
+		712EA9B529B9B88000E6112D /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712EA9B429B9B88000E6112D /* CustomSegmentedControl.swift */; };
+		712EA9B729B9BD7C00E6112D /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712EA9B629B9BD7C00E6112D /* MainNavigationController.swift */; };
 		71443621293DEB9F006C99C5 /* EditingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71443620293DEB9F006C99C5 /* EditingProfileViewController.swift */; };
 		71638A082943222B0036D145 /* UIViewcontroller + DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71638A072943222B0036D145 /* UIViewcontroller + DismissKeyboard.swift */; };
 		716F38272940BF40002A2C5B /* MotivationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716F38262940BF40002A2C5B /* MotivationViewController.swift */; };
@@ -68,6 +70,8 @@
 		711C1A00291DB4B8002A6BBD /* LayerStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerStyle.swift; sourceTree = "<group>"; };
 		711C1A02291DB5EB002A6BBD /* UIColor + App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + App.swift"; sourceTree = "<group>"; };
 		711C1A04291DB677002A6BBD /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
+		712EA9B429B9B88000E6112D /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
+		712EA9B629B9BD7C00E6112D /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		71443620293DEB9F006C99C5 /* EditingProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingProfileViewController.swift; sourceTree = "<group>"; };
 		71638A072943222B0036D145 /* UIViewcontroller + DismissKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewcontroller + DismissKeyboard.swift"; sourceTree = "<group>"; };
 		716F38262940BF40002A2C5B /* MotivationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +207,7 @@
 				711C1A04291DB677002A6BBD /* GlobalVariables.swift */,
 				71BA7F37291DBA2600D3A0A1 /* R.generated.swift */,
 				71BA7F39291DCA1200D3A0A1 /* UILabel + TextShadow.swift */,
+				712EA9B429B9B88000E6112D /* CustomSegmentedControl.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 		71F312EC2911906F0032E880 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				712EA9B629B9BD7C00E6112D /* MainNavigationController.swift */,
 				71F312D729118FA50032E880 /* MainTabBarViewController.swift */,
 				71D7788A29AE46A300D94D93 /* DogsViewController.swift */,
 				71D7789229AFC74D00D94D93 /* DogsTableViewCell.swift */,
@@ -434,6 +440,7 @@
 				71443621293DEB9F006C99C5 /* EditingProfileViewController.swift in Sources */,
 				71D7789329AFC74D00D94D93 /* DogsTableViewCell.swift in Sources */,
 				711C1A05291DB677002A6BBD /* GlobalVariables.swift in Sources */,
+				712EA9B729B9BD7C00E6112D /* MainNavigationController.swift in Sources */,
 				71E7AFC72911C1B5006A9FAC /* ClassIdentifiable.swift in Sources */,
 				716F38272940BF40002A2C5B /* MotivationViewController.swift in Sources */,
 				716F382D2940DD99002A2C5B /* AddAdvantagesViewController.swift in Sources */,
@@ -442,6 +449,7 @@
 				71AC1C8829199F2C00220D31 /* SelectHabitViewController.swift in Sources */,
 				71128C9D291B2B9D00E0A70E /* CoreDataManager.swift in Sources */,
 				71128C75291AF22000E0A70E /* UserDefaults + App.swift in Sources */,
+				712EA9B529B9B88000E6112D /* CustomSegmentedControl.swift in Sources */,
 				716F382B2940DBF4002A2C5B /* AdvantagesTableViewCell.swift in Sources */,
 				71F312DE29118FA50032E880 /* Doodze.xcdatamodeld in Sources */,
 				71E7AFC92911C63E006A9FAC /* UIView + AddSubviews.swift in Sources */,
