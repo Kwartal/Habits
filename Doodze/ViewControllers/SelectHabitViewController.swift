@@ -13,7 +13,9 @@ final class SelectHabitViewController: UIViewController {
     
     private var situationBadHabbits = Mock.habbits
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    private var context: NSManagedObjectContext!
+//    private var context: NSManagedObjectContext!
+    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
 
     
     // MARK: - UI Elements
@@ -101,9 +103,10 @@ extension SelectHabitViewController: UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let habit = situationBadHabbits[indexPath.row]
-        context = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "HabitEntity", in: context)
-        let newHabit = NSManagedObject(entity: entity!, insertInto: context)
+//        context = appDelegate.persistentContainer.viewContext
+        guard let entity = NSEntityDescription.entity(forEntityName: "HabitEntity", in: context) else { return }
+        let newHabit = NSManagedObject(entity: entity, insertInto: context)
+
         saveData(UserDBObj: newHabit, habit: habit)
         if habit.name == "Сигареты" {
             let vc = UINavigationController(rootViewController: SetupCigaretteViewController())
